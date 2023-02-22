@@ -1,7 +1,10 @@
-export const PokemonDetailPage = () => {
+import Header from "../../Components/Header/Header"
+
+export const PokemonDetailPage = (props) => {
     return(
-        <>
-        <p>Pokemon Detail Page</p>
-        </>
+        <div>
+            <Header screen={props.screen} changeScreen={props.changeScreen}/>
+            <p>Pokemon Detail Page</p>
+        </div>
     )
 }

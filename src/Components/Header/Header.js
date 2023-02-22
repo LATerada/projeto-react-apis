@@ -1,11 +1,16 @@
-import { HeaderContainer, PokedexButton, PokemonTitle } from "./HeaderStyle";
+import { DeleteFromPokemonListButton, HeaderContainer, PokedexButton, PokemonListButton, PokemonTitle } from "./HeaderStyle";
 
-const Header = () => {
+const Header = (props) => {
+
+
     return(
         <HeaderContainer>
+            {props.screen === 2 || props.screen === 3 ? <PokemonListButton onClick={()=> props.changeScreen(1)} >back to Pokemon List</PokemonListButton> : ""}
             <PokemonTitle>Pokémon</PokemonTitle>
-            <PokedexButton>Pokedex</PokedexButton>
+            {props.screen === 1 ? <PokedexButton onClick={()=> props.changeScreen(2)} >Pokedex</PokedexButton> : "" }
+            {props.screen === 3 ? <DeleteFromPokemonListButton>Delete Pokemon</DeleteFromPokemonListButton> : ""}
         </HeaderContainer>
+
     )
 }
 

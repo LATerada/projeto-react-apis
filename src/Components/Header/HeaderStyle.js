@@ -15,3 +15,12 @@ export const PokemonTitle = styled.h1`
 export const PokedexButton = styled.button`
     width: 60%;
 `
+
+export const PokemonListButton = styled.button`
+    grid-column: 1;
+    width: 60%;
+`
+
+export const DeleteFromPokemonListButton = styled.button`
+    width: 60%;
+`
