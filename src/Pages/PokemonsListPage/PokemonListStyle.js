@@ -1,6 +1,10 @@
 import styled from "styled-components";
 
-export const ListPageContainer = styled.main`
+export const PageContainer = styled.div`
+`
+
+export const PageDisplayContainer = styled.main`
+    margin: 1.5rem;
 `
 
 export const Title = styled.h1`
@@ -11,7 +15,6 @@ export const Title = styled.h1`
 export const CardDisplayContainer = styled.section`
     display: flex;
     flex-wrap: wrap;
-    justify-content: space-evenly;
     margin: 1rem;
     gap: 1rem;
 `

@@ -7,6 +7,7 @@ export const HeaderContainer = styled.header`
     grid-template-columns: 1fr 1fr 1fr;
     align-items: center;
     justify-items: center;
+    background-color: white;
 `
 
 export const PokemonTitle = styled.h1`

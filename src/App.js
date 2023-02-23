@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { createGlobalStyle } from "styled-components"
 import { PokedexPage } from "./Pages/PokedexPage/PokedexPage";
-import { PokemonDetailPage } from "./Pages/PokemonDetailPage/PokemonDetailPages";
+import { PokemonDetailPage } from "./Pages/PokemonDetailPage/PokemonDetailPage";
 import { PokemonListPage } from "./Pages/PokemonsListPage/PokemonListPage";
 
 const GlobaStyle = createGlobalStyle`
