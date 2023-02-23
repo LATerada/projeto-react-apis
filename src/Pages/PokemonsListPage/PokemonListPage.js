@@ -12,6 +12,11 @@ export const PokemonListPage = (props) => {
                 <PokemonCard/>
                 <PokemonCard/>
                 <PokemonCard/>
+                <PokemonCard/>
+                <PokemonCard/>
+                <PokemonCard/>
+                <PokemonCard/>
+                <PokemonCard/>
             </CardDisplayContainer>
         </ListPageContainer>
     )
