@@ -48,3 +48,16 @@ export const AddToPokedexButton = styled.button`
     border-radius: 8px;
     border: none;
 `
+export const DeleteFromPokedexButton = styled.button`
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    padding: 4px 10px;
+    width: 146px;
+    height: 38px;
+    padding: 4px 10px;
+    background: #FFFFFF;
+    border-radius: 8px;
+    border: none;
+`

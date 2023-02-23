@@ -6,7 +6,10 @@ import { BigCardContainer } from "./PokemonDetailStyle"
 export const PokemonDetailPage = (props) => {
     return(
         <PageContainer>
-            <Header screen={props.screen} changeScreen={props.changeScreen}/>
+            <Header 
+                screen={props.screen}
+                changeScreen={props.changeScreen}
+                deletePokemonFromPokedex={props.deletePokemonFromPokedex}/>
             <PageDisplayContainer>
                 <Title>Pokemon Detail Page</Title>
                 <BigCardContainer>

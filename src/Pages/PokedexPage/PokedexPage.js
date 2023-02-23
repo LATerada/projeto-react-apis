@@ -9,7 +9,10 @@ export const PokedexPage = (props) => {
             <PageDisplayContainer>
                 <Title>Pokedex Page</Title>
                 <CardDisplayContainer>
-                    <PokemonCard/>
+                    <PokemonCard 
+                        screen={props.screen}
+                        changeScreen={props.changeScreen}
+                        deletePokemonFromPokedex={props.deletePokemonFromPokedex}/>
                     <PokemonCard/>
                     <PokemonCard/>
                     <PokemonCard/>

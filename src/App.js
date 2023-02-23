@@ -14,19 +14,43 @@ const GlobaStyle = createGlobalStyle`
 
 function App() {
   const [screen, setScreen] = useState(3);
+  const [pokedex,setPokedex] = useState(["pika","Charmander","Bullbasar"])
 
   const changeScreen = (value) => {
     setScreen(value)
   }
 
+  const deletePokemonFromPokedex = (index) => {
+    const updatedPokedex = [...pokedex]
+    updatedPokedex.splice(index,1)
+    setPokedex(updatedPokedex)
+  }
+  console.log(pokedex)
+
   const renderScreen = () => {
       switch (screen) {
         case 1:
-          return <PokemonListPage screen={screen} changeScreen={changeScreen}/>;
+          return <PokemonListPage
+                    screen={screen} 
+                    pokedex={pokedex}
+                    setPokedex={setPokedex}
+                    changeScreen={changeScreen}
+                    />;
         case 2:
-          return <PokedexPage screen={screen} changeScreen={changeScreen}/>;
+          return <PokedexPage 
+                    screen={screen} 
+                    pokedex={pokedex}
+                    setPokedex={setPokedex}
+                    changeScreen={changeScreen}
+                    deletePokemonFromPokedex={deletePokemonFromPokedex}
+                    />;
         case 3:
-          return <PokemonDetailPage screen={screen} changeScreen={changeScreen}/>;
+          return <PokemonDetailPage 
+                    screen={screen}
+                    pokedex={pokedex}
+                    setPokedex={setPokedex}
+                    changeScreen={changeScreen}
+                    deletePokemonFromPokedex={deletePokemonFromPokedex}/>;
         default: 
           return "Page not found";
       }
