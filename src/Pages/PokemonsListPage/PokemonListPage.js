@@ -1,12 +1,18 @@
 import Header from "../../Components/Header/Header"
 import PokemonCard from "../../Components/PokemonCard/PokemonCard"
+import { CardDisplayContainer, ListPageContainer, Title } from "./PokemonListStyle"
 
 export const PokemonListPage = (props) => {
     return(
-        <div>
+        <ListPageContainer>
             <Header screen={props.screen} changeScreen={props.changeScreen}/>
-            <p>Pokemon List Page</p>
-            <PokemonCard/>
-        </div>
+            <Title>Pokemon List Page</Title>
+            <CardDisplayContainer>
+                <PokemonCard/>
+                <PokemonCard/>
+                <PokemonCard/>
+                <PokemonCard/>
+            </CardDisplayContainer>
+        </ListPageContainer>
     )
 }

@@ -1,11 +1,12 @@
+import { AddToPokedexButton, CardContainer, DetailButton, PokemonName } from "./PokemonCardStyle";
+
 const PokemonCard = () => {
     return(
-        <div>
-            <div>Pokemon Card</div>
-            <p>Details</p>
-            <p>Image</p>
-            <p>Type</p>
-        </div>
+        <CardContainer>
+            <PokemonName>Pokemon Name</PokemonName>
+            <DetailButton>Details</DetailButton>
+            <AddToPokedexButton>Add to Pokedex</AddToPokedexButton>
+        </CardContainer>
     )
 };
 
