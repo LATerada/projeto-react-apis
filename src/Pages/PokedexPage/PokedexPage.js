@@ -2,7 +2,7 @@ import Header from "../../Components/Header/Header"
 import PokemonCard from "../../Components/PokemonCard/PokemonCard"
 import { CardDisplayContainer, PageContainer, PageDisplayContainer, Title } from "../PokemonsListPage/PokemonListStyle"
 
-export const PokedexPage = (props) => {
+ const PokedexPage = (props) => {
     return(
         <PageContainer>
             <Header screen={props.screen} changeScreen={props.changeScreen}/>
@@ -11,7 +11,7 @@ export const PokedexPage = (props) => {
                 <CardDisplayContainer>
                     <PokemonCard 
                         screen={props.screen}
-                        changeScreen={props.changeScreen}
+                        setScreen={props.setScreen}
                         deletePokemonFromPokedex={props.deletePokemonFromPokedex}/>
                     <PokemonCard/>
                     <PokemonCard/>
@@ -22,3 +22,5 @@ export const PokedexPage = (props) => {
         </PageContainer>
     )
 }
+
+export default PokedexPage

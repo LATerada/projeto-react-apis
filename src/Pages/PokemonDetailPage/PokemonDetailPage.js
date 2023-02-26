@@ -3,7 +3,7 @@ import { PokemonName } from "../../Components/PokemonCard/PokemonCardStyle"
 import { PageContainer, PageDisplayContainer, Title } from "../PokemonsListPage/PokemonListStyle"
 import { BigCardContainer } from "./PokemonDetailStyle"
 
-export const PokemonDetailPage = (props) => {
+const PokemonDetailPage = (props) => {
     return(
         <PageContainer>
             <Header 
@@ -19,3 +19,5 @@ export const PokemonDetailPage = (props) => {
         </PageContainer>
     )
 }
+
+export default PokemonDetailPage
