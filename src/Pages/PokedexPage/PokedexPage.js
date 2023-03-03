@@ -5,13 +5,11 @@ import { CardDisplayContainer, PageContainer, PageDisplayContainer, Title } from
  const PokedexPage = (props) => {
     return(
         <PageContainer>
-            <Header screen={props.screen} changeScreen={props.changeScreen}/>
+            <Header/>
             <PageDisplayContainer>
                 <Title>Pokedex Page</Title>
                 <CardDisplayContainer>
                     <PokemonCard 
-                        screen={props.screen}
-                        setScreen={props.setScreen}
                         deletePokemonFromPokedex={props.deletePokemonFromPokedex}/>
                     <PokemonCard/>
                     <PokemonCard/>

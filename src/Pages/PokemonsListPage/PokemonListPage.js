@@ -11,14 +11,11 @@ const PokemonListPage = (props) => {
     
     return(
         <PageContainer>
-            <Header screen={props.screen} setScreen={props.setScreen}/>
+            <Header/>
             <PageDisplayContainer>
                 <Title>Pokemon List Page</Title>
                 <CardDisplayContainer>
                     <PokemonCard 
-                        screen={props.screen}
-                        pokedex={props.pokedex}
-                        setScreen={props.setScreen}
                         addPokemonToPokedex={() => addPokemonToPokedex("pikachu")}
                         />
                     <PokemonCard/>

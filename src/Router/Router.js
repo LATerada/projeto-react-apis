@@ -9,25 +9,18 @@ export const Router = (props) => {
         <BrowserRouter>
             <Routes>
                 <Route index element={ <PokemonListPage                      
-                                            screen={props.screen}
                                             pokedex={props.pokedex}
-                                            setScreen={props.setScreen}
-                                            setPokedex={props.setPokedex}
-                                            deletePokemonFromPokedex={props.deletePokemonFromPokedex}/> 
+                                            setPokedex={props.setPokedex}/> 
                                     }>
                 </Route>
                 <Route path="/pokedex" element={ <PokedexPage
-                                                    screen={props.screen}
                                                     pokedex={props.pokedex}
-                                                    setScreen={props.setScreen}
                                                     setPokedex={props.setPokedex}
                                                     deletePokemonFromPokedex={props.deletePokemonFromPokedex}/> 
                                                 }>
                 </Route>
                 <Route path="/detail/:id" element={ <PokemonDetailPage
-                                                        screen={props.screen}
                                                         pokedex={props.pokedex}
-                                                        setScreen={props.setScreen}
                                                         setPokedex={props.setPokedex}
                                                         deletePokemonFromPokedex={props.deletePokemonFromPokedex}/> 
                                                     }>
