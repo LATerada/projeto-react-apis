@@ -8,16 +8,15 @@ import { CardDisplayContainer, PageContainer, PageDisplayContainer, Title } from
             <Header/>
             <PageDisplayContainer>
                 <Title>Pokedex Page</Title>
-                <CardDisplayContainer>
                     {props.pokedex.map((pokemon) => {
                         return(
-                            <PokemonCard 
-                            deletePokemonFromPokedex={props.deletePokemonFromPokedex}
-                            pokemon={pokemon}/>
+                            <CardDisplayContainer>
+                                <PokemonCard key={pokemon.name}
+                                deletePokemonFromPokedex={props.deletePokemonFromPokedex}
+                                pokemon={pokemon}/>
+                            </CardDisplayContainer>
                         )
                     })}
-                 
-                </CardDisplayContainer>
             </PageDisplayContainer>
         </PageContainer>
     )

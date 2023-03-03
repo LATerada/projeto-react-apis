@@ -7,8 +7,6 @@ const Header = (props) => {
     const location = useLocation();
     let { id } = useParams();
 
-    console.log(location)
-
     return(
         <HeaderContainer>
             {location.pathname === "/pokedex" || location.pathname === "/detail/id" ? <PokemonListButton onClick={()=> GoToPokemonListPage(navigate)} >All Pokémons</PokemonListButton> : ""}

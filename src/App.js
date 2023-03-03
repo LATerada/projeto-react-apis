@@ -1,3 +1,4 @@
+import axios from "axios";
 import { useState } from "react";
 import { createGlobalStyle } from "styled-components"
 import { Router } from "./Router/Router";
@@ -11,7 +12,18 @@ const GlobaStyle = createGlobalStyle`
 `
 
 function App() {
-  const [pokedex,setPokedex] = useState(["pika","Charmander","Bullbasar"])
+  const [pokemonList,setPokemonList] = useState([])
+  const [pokedex,setPokedex] = useState([])
+
+  axios
+    .get("https://pokeapi.co/api/v2/pokemon/")
+    .then(response => {
+        // console.log(response.data.results)
+        setPokemonList(response.data.results)
+    })
+    .catch((error) => {
+      console.log(error.response.data)
+    })
 
   const deletePokemonFromPokedex = (id) => {
     const updatedPokedex = [...pokedex]
@@ -24,8 +36,10 @@ function App() {
   return (
     <div>
       <GlobaStyle/>
-      <Router  
+      <Router
+        pokemonList={pokemonList}
         pokedex={pokedex}
+        setPokemonList={setPokemonList}
         setPokedex={setPokedex}
         deletePokemonFromPokedex={deletePokemonFromPokedex}/>
     </div>

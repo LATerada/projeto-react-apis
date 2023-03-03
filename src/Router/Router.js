@@ -8,8 +8,10 @@ export const Router = (props) => {
     return(
         <BrowserRouter>
             <Routes>
-                <Route index element={ <PokemonListPage                      
+                <Route index element={ <PokemonListPage
+                                            pokemonList={props.pokemonList}                   
                                             pokedex={props.pokedex}
+                                            setPokemonList={props.setPokemonList}
                                             setPokedex={props.setPokedex}/> 
                                     }>
                 </Route>
