@@ -1,14 +1,11 @@
-export const GoToPokemonListPage = (navigate, setScreen) => {
-    setScreen(1)
+export const GoToPokemonListPage = (navigate) => {
     navigate("/")
 }
 
-export const GoToPokedexPage = (navigate, setScreen) => {
-    setScreen(2)
+export const GoToPokedexPage = (navigate) => {
     navigate("/pokedex")
 }
 
-export const GoToDetailPage = (navigate, id, setScreen) => {
-    setScreen(3)
+export const GoToDetailPage = (navigate, id) => {
     navigate(`/detail/${id}`)
 }

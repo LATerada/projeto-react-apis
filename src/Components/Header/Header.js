@@ -1,16 +1,20 @@
 import { DeleteFromPokedexButton, HeaderContainer, PokedexButton, PokemonListButton, PokemonTitle } from "./HeaderStyle";
-import { useNavigate } from "react-router-dom";
-import { GoToPokemonListPage, GoToPokedexPage} from "../../Router/coordinator";
+import { useNavigate, useLocation, useParams } from "react-router-dom";
+import { GoToPokedexPage, GoToPokemonListPage} from "../../Router/coordinator";
 
 const Header = (props) => {
     const navigate = useNavigate();
+    const location = useLocation();
+    let { id } = useParams();
+
+    console.log(location)
 
     return(
         <HeaderContainer>
-            {props.screen === 2 || props.screen === 3 ? <PokemonListButton onClick={()=> GoToPokemonListPage(navigate, props.setScreen)} >All Pokémons</PokemonListButton> : ""}
+            {location.pathname === "/pokedex" || location.pathname === "/detail/:id" ? <PokemonListButton onClick={()=> GoToPokemonListPage(navigate)} >All Pokémons</PokemonListButton> : ""}
             <PokemonTitle>Pokémon</PokemonTitle>
-            {props.screen === 1 ? <PokedexButton onClick={()=> GoToPokedexPage(navigate,props.setScreen)} >Pokedéx</PokedexButton> : "" }
-            {props.screen === 3 ? <DeleteFromPokedexButton onClick={() => props.deletePokemonFromPokedex(0)}>Delete from Pokedéx</DeleteFromPokedexButton> : ""}
+            {location.pathname === "/" ? <PokedexButton onClick={() => GoToPokedexPage(navigate)} >Pokedéx</PokedexButton> : "" }
+            {location.pathname === "/detail/:id" ? <DeleteFromPokedexButton onClick={() => props.deletePokemonFromPokedex(id)} >Delete from Pokedéx</DeleteFromPokedexButton> : ""}
         </HeaderContainer>
     )
 }
