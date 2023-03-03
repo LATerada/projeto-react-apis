@@ -11,10 +11,10 @@ const Header = (props) => {
 
     return(
         <HeaderContainer>
-            {location.pathname === "/pokedex" || location.pathname === "/detail/:id" ? <PokemonListButton onClick={()=> GoToPokemonListPage(navigate)} >All Pokémons</PokemonListButton> : ""}
+            {location.pathname === "/pokedex" || location.pathname === "/detail/id" ? <PokemonListButton onClick={()=> GoToPokemonListPage(navigate)} >All Pokémons</PokemonListButton> : ""}
             <PokemonTitle>Pokémon</PokemonTitle>
             {location.pathname === "/" ? <PokedexButton onClick={() => GoToPokedexPage(navigate)} >Pokedéx</PokedexButton> : "" }
-            {location.pathname === "/detail/:id" ? <DeleteFromPokedexButton onClick={() => props.deletePokemonFromPokedex(id)} >Delete from Pokedéx</DeleteFromPokedexButton> : ""}
+            {location.pathname === "/detail/id" ? <DeleteFromPokedexButton onClick={() => props.deletePokemonFromPokedex(id)} >Delete from Pokedéx</DeleteFromPokedexButton> : ""}
         </HeaderContainer>
     )
 }
