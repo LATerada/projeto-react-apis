@@ -7,6 +7,7 @@ const PokemonListPage = (props) => {
     const addPokemonToPokedex = (pokemon) => {
         const updatedPokedex = [...props.pokedex, pokemon]
         props.setPokedex(updatedPokedex)
+        console.log(props.pokedex)
     }
     
     return(
@@ -16,16 +17,8 @@ const PokemonListPage = (props) => {
                 <Title>Pokemon List Page</Title>
                 <CardDisplayContainer>
                     <PokemonCard 
-                        addPokemonToPokedex={() => addPokemonToPokedex("pikachu")}
+                        addPokemonToPokedex={addPokemonToPokedex}
                         />
-                    <PokemonCard/>
-                    <PokemonCard/>
-                    <PokemonCard/>
-                    <PokemonCard/>
-                    <PokemonCard/>
-                    <PokemonCard/>
-                    <PokemonCard/>
-                    <PokemonCard/>
                 </CardDisplayContainer>
             </PageDisplayContainer>
 

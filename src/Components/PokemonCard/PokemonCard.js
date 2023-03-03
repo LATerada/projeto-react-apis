@@ -8,10 +8,10 @@ const PokemonCard = (props) => {
 
     return(
         <CardContainer>
-            <PokemonName>Pokemon Name</PokemonName>
-            <DetailButton onClick={() => GoToDetailPage( navigate, "id", props.setScreen)} >Details</DetailButton>
+            <PokemonName>{props.pokemon}</PokemonName>
+            <DetailButton onClick={() => GoToDetailPage( navigate, "id")} >Details</DetailButton>
             {location.pathname === "/" ? <AddToPokedexButton onClick={() => props.addPokemonToPokedex("Clicked Pokemon")}>Add to Pokédex</AddToPokedexButton> : ""}
-            {location.pathname === "/pokedex" ? <DeleteFromPokedexButton onClick={()=> props.deletePokemonFromPokedex("pokemon")} >Delete from Pokédex</DeleteFromPokedexButton> : ""}
+            {location.pathname === "/pokedex" ? <DeleteFromPokedexButton onClick={()=> props.deletePokemonFromPokedex(props.pokemon)} >Delete from Pokédex</DeleteFromPokedexButton> : ""}
         </CardContainer>
     )
 };

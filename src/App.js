@@ -18,6 +18,7 @@ function App() {
     const index = updatedPokedex.indexOf(id)
     updatedPokedex.splice(index,1)
     setPokedex(updatedPokedex)
+    console.log(pokedex)
   }
 
   return (
