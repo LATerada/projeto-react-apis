@@ -12,7 +12,7 @@ export const Title = styled.h1`
     width: 100%;
 `
 
-export const CardDisplayContainer = styled.section`
+export const CardContainer = styled.section`
     display: flex;
     flex-wrap: wrap;
     margin: 1rem;

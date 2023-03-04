@@ -1,5 +1,5 @@
 import axios from "axios";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { createGlobalStyle } from "styled-components"
 import { Router } from "./Router/Router";
 
@@ -15,23 +15,26 @@ function App() {
   const [pokemonList,setPokemonList] = useState([])
   const [pokedex,setPokedex] = useState([])
 
-  axios
+  const deletePokemonFromPokedex = (pokemon) => {
+    const updatedPokedex = [...pokedex]
+    const index = updatedPokedex.indexOf(pokemon)
+    updatedPokedex.splice(index,1)
+    setPokedex(updatedPokedex)
+
+    const updatedPokemonList = [...pokemonList,pokemon]
+    setPokemonList(updatedPokemonList)
+  }
+
+  useEffect(() => {
+    axios
     .get("https://pokeapi.co/api/v2/pokemon/")
     .then(response => {
-        // console.log(response.data.results)
         setPokemonList(response.data.results)
     })
     .catch((error) => {
       console.log(error.response.data)
     })
-
-  const deletePokemonFromPokedex = (id) => {
-    const updatedPokedex = [...pokedex]
-    const index = updatedPokedex.indexOf(id)
-    updatedPokedex.splice(index,1)
-    setPokedex(updatedPokedex)
-    console.log(pokedex)
-  }
+  },[])
 
   return (
     <div>

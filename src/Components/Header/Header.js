@@ -6,13 +6,16 @@ const Header = (props) => {
     const navigate = useNavigate();
     const location = useLocation();
     let { id } = useParams();
+    let pokedex = props.pokedex
+    let element = {name: id}
+    console.log( pokedex.some(pokedex => pokedex.name === element.name))
 
     return(
         <HeaderContainer>
-            {location.pathname === "/pokedex" || location.pathname === "/detail/id" ? <PokemonListButton onClick={()=> GoToPokemonListPage(navigate)} >All Pokémons</PokemonListButton> : ""}
+            {location.pathname === "/pokedex" || location.pathname === `/detail/${id}` ? <PokemonListButton onClick={()=> GoToPokemonListPage(navigate)} >All Pokémons</PokemonListButton> : ""}
             <PokemonTitle>Pokémon</PokemonTitle>
             {location.pathname === "/" ? <PokedexButton onClick={() => GoToPokedexPage(navigate)} >Pokedéx</PokedexButton> : "" }
-            {location.pathname === "/detail/id" ? <DeleteFromPokedexButton onClick={() => props.deletePokemonFromPokedex(id)} >Delete from Pokedéx</DeleteFromPokedexButton> : ""}
+            {location.pathname === `/detail/${id}` ? <DeleteFromPokedexButton onClick={() => props.deletePokemonFromPokedex(id)} >Delete from Pokedéx</DeleteFromPokedexButton> : <button></button>}
         </HeaderContainer>
     )
 }

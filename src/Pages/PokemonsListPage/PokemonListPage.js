@@ -1,6 +1,6 @@
 import Header from "../../Components/Header/Header"
 import PokemonCard from "../../Components/PokemonCard/PokemonCard"
-import { CardDisplayContainer, PageContainer, PageDisplayContainer, Title } from "./PokemonListStyle"
+import { CardContainer, PageContainer, PageDisplayContainer, Title } from "./PokemonListStyle"
 
 const PokemonListPage = (props) => {
 
@@ -10,11 +10,8 @@ const PokemonListPage = (props) => {
 
         const updatedPokemonList = [...props.pokemonList]
         const index = updatedPokemonList.indexOf(pokemon)
-        console.log(index)
         updatedPokemonList.splice(index,1)
-        console.log(updatedPokemonList)
         props.setPokemonList(updatedPokemonList)
-        console.log(props.pokedex, props.pokemonList)
     }
     
     return(
@@ -22,17 +19,17 @@ const PokemonListPage = (props) => {
             <Header/>
             <PageDisplayContainer>
                 <Title>Pokemon List Page</Title>
-                <CardDisplayContainer>
+      
                     {props.pokemonList.map((pokemon) => {
                         return(
-                            <PokemonCard key={pokemon.name}
-                            addPokemonToPokedex={addPokemonToPokedex}
-                            pokemon={pokemon}
-                            />
+                            <CardContainer key={pokemon.url}>
+                                <PokemonCard 
+                                addPokemonToPokedex={addPokemonToPokedex}
+                                pokemon={pokemon}
+                                />
+                            </CardContainer>
                         )
                     })}
-               
-                </CardDisplayContainer>
             </PageDisplayContainer>
 
         </PageContainer>

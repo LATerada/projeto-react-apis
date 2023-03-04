@@ -1,6 +1,6 @@
 import Header from "../../Components/Header/Header"
 import PokemonCard from "../../Components/PokemonCard/PokemonCard"
-import { CardDisplayContainer, PageContainer, PageDisplayContainer, Title } from "../PokemonsListPage/PokemonListStyle"
+import { CardContainer, PageContainer, PageDisplayContainer, Title } from "../PokemonsListPage/PokemonListStyle"
 
  const PokedexPage = (props) => {
     return(
@@ -10,11 +10,11 @@ import { CardDisplayContainer, PageContainer, PageDisplayContainer, Title } from
                 <Title>Pokedex Page</Title>
                     {props.pokedex.map((pokemon) => {
                         return(
-                            <CardDisplayContainer>
-                                <PokemonCard key={pokemon.name}
+                            <CardContainer key={pokemon.url}>
+                                <PokemonCard 
                                 deletePokemonFromPokedex={props.deletePokemonFromPokedex}
                                 pokemon={pokemon}/>
-                            </CardDisplayContainer>
+                            </CardContainer>
                         )
                     })}
             </PageDisplayContainer>
