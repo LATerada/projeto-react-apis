@@ -8,26 +8,34 @@ export const Router = (props) => {
     return(
         <BrowserRouter>
             <Routes>
-                <Route index element={ <PokemonListPage
-                                            pokemonList={props.pokemonList}                   
-                                            pokedex={props.pokedex}
-                                            setPokemonList={props.setPokemonList}
-                                            setPokedex={props.setPokedex}/> 
-                                    }>
+                <Route 
+                    index 
+                    element={ <PokemonListPage
+                        pokemonList={props.pokemonList}                   
+                        pokedex={props.pokedex}
+                        setPokemonList={props.setPokemonList}
+                        setPokedex={props.setPokedex}/>
+                        }>
                 </Route>
-                <Route path="/pokedex" element={ <PokedexPage
-                                                    pokedex={props.pokedex}
-                                                    setPokedex={props.setPokedex}
-                                                    deletePokemonFromPokedex={props.deletePokemonFromPokedex}/> 
-                                                }>
+                <Route 
+                    path="/pokedex" 
+                    element={ <PokedexPage
+                        pokedex={props.pokedex}
+                        setPokedex={props.setPokedex}
+                        deletePokemonFromPokedex={props.deletePokemonFromPokedex}/> 
+                        }>
                 </Route>
-                <Route path="/detail/:id" element={ <PokemonDetailPage
-                                                        pokedex={props.pokedex}
-                                                        setPokedex={props.setPokedex}
-                                                        deletePokemonFromPokedex={props.deletePokemonFromPokedex}/> 
-                                                    }>
+                <Route 
+                    path="/detail/:id" 
+                    element={ <PokemonDetailPage
+                        pokedex={props.pokedex}
+                        setPokedex={props.setPokedex}
+                        deletePokemonFromPokedex={props.deletePokemonFromPokedex}/> 
+                        }>
                 </Route>
-                <Route path="*" element={ <ErrorPage/> }></Route>
+                <Route 
+                    path="*"
+                    element={ <ErrorPage/> }></Route>
             </Routes>
         </BrowserRouter>
     )
