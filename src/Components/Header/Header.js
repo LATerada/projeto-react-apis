@@ -6,9 +6,9 @@ const Header = (props) => {
     const navigate = useNavigate();
     const location = useLocation();
     let { id } = useParams();
-    let pokedex = props.pokedex
-    let element = {name: id}
-    console.log( pokedex.some(pokedex => pokedex.name === element.name))
+    // let pokedex = props.pokedex
+    // let element = {name: id}
+    // console.log( pokedex.some(pokedex => pokedex.name === element.name))
 
     return(
         <HeaderContainer>

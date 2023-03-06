@@ -1,8 +1,8 @@
 import axios from "axios"
 import { useEffect } from "react"
 import { useParams } from "react-router-dom"
+import BigPokemonCard from "../../Components/BigPokemonCard/BigPokemonCard"
 import Header from "../../Components/Header/Header"
-import { PokemonName } from "../../Components/PokemonCard/PokemonCardStyle"
 import { PageContainer, PageDisplayContainer, Title } from "../PokemonsListPage/PokemonListStyle"
 import { BigCardContainer } from "./PokemonDetailStyle"
 
@@ -27,7 +27,7 @@ const PokemonDetailPage = (props) => {
             <PageDisplayContainer>
                 <Title>Pokemon Detail Page</Title>
                 <BigCardContainer>
-                    <PokemonName></PokemonName>
+                    <BigPokemonCard/>
                 </BigCardContainer>
             </PageDisplayContainer>
         </PageContainer>
