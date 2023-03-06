@@ -19,7 +19,6 @@ const PokemonListPage = (props) => {
             <Header/>
             <PageDisplayContainer>
                 <Title>Pokemon List Page</Title>
-      
                     {props.pokemonList.map((pokemon) => {
                         return(
                             <CardContainer key={pokemon.url}>
