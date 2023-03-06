@@ -5,6 +5,9 @@ export const PageContainer = styled.div`
 
 export const PageDisplayContainer = styled.main`
     margin: 1.5rem;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
 `
 
 export const Title = styled.h1`
@@ -13,8 +16,6 @@ export const Title = styled.h1`
 `
 
 export const CardContainer = styled.section`
-    display: flex;
-    flex-wrap: wrap;
     margin: 1rem;
-    gap: 1rem;
+
 `

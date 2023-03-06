@@ -8,6 +8,7 @@ import { BigCardContainer } from "./PokemonDetailStyle"
 
 const PokemonDetailPage = (props) => {
     const { id } = useParams()
+    console.log({props})
 
     useEffect(() => {
         axios.get(`https://pokeapi.co/api/v2/pokemon/${id}`)
@@ -21,9 +22,9 @@ const PokemonDetailPage = (props) => {
 
     return(
         <PageContainer>
-            <Header
+            {/* <Header
                 pokedex={props.pokedex}
-                deletePokemonFromPokedex={props.deletePokemonFromPokedex}/>
+                deletePokemonFromPokedex={props.deletePokemonFromPokedex}/> */}
             <PageDisplayContainer>
                 <Title>Pokemon Detail Page</Title>
                 <BigCardContainer>

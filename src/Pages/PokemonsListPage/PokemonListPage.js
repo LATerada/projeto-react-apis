@@ -16,18 +16,19 @@ const PokemonListPage = (props) => {
     
     return(
         <PageContainer>
-            <Header/>
+            {/* <Header addPokemonToPokedex={addPokemonToPokedex}/> */}
             <PageDisplayContainer>
                 <Title>Pokemon List Page</Title>
-                    {props.pokemonList.map((pokemon) => {
-                        return(
-                            <PokemonCard 
-                                key={pokemon.url}
-                                addPokemonToPokedex={addPokemonToPokedex}
-                                pokemon={pokemon}
-                            />
-                        )
-                    })}
+                    {props.pokemonList
+                        .map((pokemon) => {
+                            return(
+                                <PokemonCard 
+                                    key={pokemon.url}
+                                    addPokemonToPokedex={addPokemonToPokedex}
+                                    pokemon={pokemon}
+                                />
+                            )
+                        })}
             </PageDisplayContainer>
 
         </PageContainer>

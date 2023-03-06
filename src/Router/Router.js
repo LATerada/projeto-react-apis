@@ -5,6 +5,7 @@ import PokemonDetailPage from "../Pages/PokemonDetailPage/PokemonDetailPage"
 import ErrorPage from "../Pages/ErrorPage/ErrorPage"
 import { useEffect, useState } from "react"
 import axios from "axios"
+import Header from "../Components/Header/Header"
 
 export const Router = () => {
     const [pokemonList,setPokemonList] = useState([])
@@ -32,6 +33,7 @@ export const Router = () => {
     },[])
     return(
         <BrowserRouter>
+            <Header pokedex={pokedex} deletePokemonFromPokedex addPokemonToPokedex/>
             <Routes>
                 <Route 
                     index 
