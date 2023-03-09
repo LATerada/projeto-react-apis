@@ -12,9 +12,8 @@ export const useRequestData = (initialState, path) => {
         axios
             .get(`${BASE_URL}${path}`)
             .then(response => {
-                console.log(response.data.results)
                 setIsLoading(false)
-                setData(response.data.results)
+                path === "/" ? setData(response.data.results) : setData(response.data)
             })
             .catch((error) => {
                 setIsLoading(false)
@@ -23,5 +22,5 @@ export const useRequestData = (initialState, path) => {
             })
     },[path])
 
-    return [ data, setData, isLoading, error ]
+    return [ data, isLoading, error ]
 }

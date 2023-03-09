@@ -5,7 +5,7 @@ import { useRequestData } from "./hooks/useRequesData";
 
 function App() {
   const [pokedex,setPokedex] = useState([])
-  const [ pokemonList, setPokemonList, isLoading, error ] = useRequestData([], "/")
+  const [ pokemonList, isLoading, error ] = useRequestData([], "/")
 
   const addPokemonToPokedex = (clickedPokemon) => {
     const isAlreadyInPokedex = pokedex.find((pokemonInPokedex) => 
@@ -30,7 +30,6 @@ function App() {
     pokedex,
     setPokedex,
     pokemonList,
-    setPokemonList,
     isLoading,
     error,
     addPokemonToPokedex,
