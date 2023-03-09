@@ -1,7 +1,11 @@
-import PokemonCard from "../../Components/PokemonCard/PokemonCard"
+import { useContext } from "react"
+import PokemonCard from "../../components/PokemonCard/PokemonCard"
+import { GlobalContext } from "../../contexts/GlobalContext"
 import { PageContainer, PageDisplayContainer, Title } from "../PokemonsListPage/PokemonListStyle"
 
- const PokedexPage = ({ pokedex, deletePokemonFromPokedex}) => {
+ const PokedexPage = () => {
+    const context = useContext(GlobalContext)
+    const { pokedex } = context
     console.log(pokedex)
 
     return(
@@ -13,7 +17,6 @@ import { PageContainer, PageDisplayContainer, Title } from "../PokemonsListPage/
                             return(
                                 <PokemonCard 
                                     key={pokemon.url}
-                                    deletePokemonFromPokedex={deletePokemonFromPokedex}
                                     pokemon={pokemon}
                                 />
                             )

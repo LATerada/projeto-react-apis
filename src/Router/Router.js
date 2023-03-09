@@ -1,64 +1,26 @@
 import { BrowserRouter, Routes, Route } from "react-router-dom"
-import Header from "../Components/Header/Header"
-import PokemonListPage from "../Pages/PokemonsListPage/PokemonListPage"
-import PokedexPage from "../Pages/PokedexPage/PokedexPage"
-import PokemonDetailPage from "../Pages/PokemonDetailPage/PokemonDetailPage"
-import ErrorPage from "../Pages/ErrorPage/ErrorPage"
-import { useEffect, useState } from "react"
-import axios from "axios"
+import Header from "../components/Header/Header"
+import PokemonListPage from "../pages/PokemonsListPage/PokemonListPage"
+import PokedexPage from "../pages/PokedexPage/PokedexPage"
+import PokemonDetailPage from "../pages/PokemonDetailPage/PokemonDetailPage"
+import ErrorPage from "../pages/ErrorPage/ErrorPage"
 
 export const Router = () => {
-    const [pokemonList,setPokemonList] = useState([])
-    const [pokedex,setPokedex] = useState([])
-  
-    const deletePokemonFromPokedex = (pokemon) => {
-      const updatedPokedex = [...pokedex]
-      const index = updatedPokedex.indexOf(pokemon)
-      updatedPokedex.splice(index,1)
-      setPokedex(updatedPokedex)
-  
-      const updatedPokemonList = [...pokemonList,pokemon]
-      setPokemonList(updatedPokemonList)
-    }
-  
-    useEffect(() => {
-      axios
-      .get("https://pokeapi.co/api/v2/pokemon/")
-      .then(response => {
-          setPokemonList(response.data.results)
-      })
-      .catch((error) => {
-        console.log(error.response.data)
-      })
-    },[])
     return(
         <BrowserRouter>
-            <Header pokedex={pokedex} deletePokemonFromPokedex addPokemonToPokedex/>
+            <Header/>
             <Routes>
                 <Route 
                     index 
-                    element={ <PokemonListPage
-                        pokemonList={pokemonList}                   
-                        pokedex={pokedex}
-                        setPokemonList={setPokemonList}
-                        setPokedex={setPokedex}/>
-                        }>
+                    element={ <PokemonListPage/> }>
                 </Route>
                 <Route 
                     path="/pokedex" 
-                    element={ <PokedexPage
-                        pokedex={pokedex}
-                        setPokedex={setPokedex}
-                        deletePokemonFromPokedex={deletePokemonFromPokedex}/> 
-                        }>
+                    element={ <PokedexPage/> }>
                 </Route>
                 <Route 
                     path="/detail/:id" 
-                    element={ <PokemonDetailPage
-                        pokedex={pokedex}
-                        setPokedex={setPokedex}
-                        deletePokemonFromPokedex={deletePokemonFromPokedex}/> 
-                        }>
+                    element={ <PokemonDetailPage/> }>
                 </Route>
                 <Route 
                     path="*"

@@ -1,30 +1,33 @@
 import { DeleteFromPokedexButton, HeaderContainer, PokedexButton, PokemonListButton, PokemonTitle } from "./HeaderStyle";
-import { useNavigate, useLocation, useParams } from "react-router-dom";
-import { goToPokedexPage, goToPokemonListPage } from "../../Router/coordinator";
+import { useNavigate, useLocation } from "react-router-dom";
+import { goToPokedexPage, goToPokemonListPage } from "../../router/coordinator";
+import { useContext } from "react";
+import { GlobalContext } from "../../contexts/GlobalContext";
 import { AddToPokedexButton } from "../PokemonCard/PokemonCardStyle";
 
-const Header = ({pokedex, deletePokemonFromPokedex, addPokemonToPokedex}) => {
+const Header = () => {
+    const context = useContext(GlobalContext)
+    const { pokedex, addPokemonToPokedex, deletePokemonFromPokedex } = context
     const navigate = useNavigate();
     const location = useLocation();
-    let  id  = useParams();
-    console.log(location)
-    console.log(id)
+    const name = location.pathname.slice(8)
 
-
-    // let element = {name: id}
-    // console.log(pokedex.some(pokedex => pokedex.name === element.name))
-
-    // const pokemonInPokedex = pokedex && pokedex.find((pokemonInPokedex) => pokemonInPokedex.id === id)
-    // console.log(pokemonInPokedex)
+    const showAddButton = (detailedPokemon) => {
+        const isAlreadyInPokedex = pokedex.find((pokemonInPokedex) => 
+        pokemonInPokedex.name === detailedPokemon
+        )
+        if(isAlreadyInPokedex){
+            return true
+        }
+        return false
+    } 
 
     return(
         <HeaderContainer>
-            {location.pathname === "/pokedex" || location.pathname === `/detail/${id}` ? <PokemonListButton onClick={()=> goToPokemonListPage(navigate)} >All Pokémons</PokemonListButton> : ""}
+            {location.pathname === "/pokedex" || location.pathname === `/detail/${name}` ? <PokemonListButton onClick={()=> goToPokemonListPage(navigate)} >All Pokémons</PokemonListButton> : ""}
             <PokemonTitle>Pokémon</PokemonTitle>
             {location.pathname === "/" ? <PokedexButton onClick={() => goToPokedexPage(navigate)} >Pokedéx</PokedexButton> : "" }
-            {location.pathname === `/detail/${id}` ? <DeleteFromPokedexButton onClick={() => deletePokemonFromPokedex(id)} >Delete from Pokedéx</DeleteFromPokedexButton> : ""}
-                 {/* pokedex.includes(id) ? <DeleteFromPokedexButton onClick={() => deletePokemonFromPokedex(id)} >Delete from Pokedéx</DeleteFromPokedexButton> : <AddToPokedexButton onClick={() => addPokemonToPokedex}>Add to</AddToPokedexButton> */}
-            
+            {location.pathname === `/detail/${name}` ? showAddButton(name) ? <DeleteFromPokedexButton onClick={() => deletePokemonFromPokedex(name)} >Delete from Pokedéx</DeleteFromPokedexButton> : <AddToPokedexButton onClick={() => addPokemonToPokedex(name)} >Add to Pokedex</AddToPokedexButton> : ""}
         </HeaderContainer>
     )
 }

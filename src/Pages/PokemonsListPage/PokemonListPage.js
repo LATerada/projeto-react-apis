@@ -1,28 +1,26 @@
-import PokemonCard from "../../Components/PokemonCard/PokemonCard"
+import { useContext } from "react"
+import PokemonCard from "../../components/PokemonCard/PokemonCard"
+import { GlobalContext } from "../../contexts/GlobalContext"
 import { PageContainer, PageDisplayContainer, Title } from "./PokemonListStyle"
 
-const PokemonListPage = (props) => {
+const PokemonListPage = () => {
+    const context = useContext(GlobalContext)
+    const { pokemonList, pokedex } = context
+    console.log(pokemonList)
 
-    const addPokemonToPokedex = (pokemon) => {
-        const updatedPokedex = [...props.pokedex, pokemon]
-        props.setPokedex(updatedPokedex)
+    const filteredPokemonList = () => pokemonList.filter(
+        (pokemonInList) => !pokedex.find((pokemonInPokedex) => pokemonInList.name === pokemonInPokedex.name)
+    );
 
-        const updatedPokemonList = [...props.pokemonList]
-        const index = updatedPokemonList.indexOf(pokemon)
-        updatedPokemonList.splice(index,1)
-        props.setPokemonList(updatedPokemonList)
-    }
-    
     return(
         <PageContainer>
             <PageDisplayContainer>
                 <Title>Pokemon List Page</Title>
-                    {props.pokemonList
+                    {filteredPokemonList()
                         .map((pokemon) => {
                             return(
                                 <PokemonCard 
                                     key={pokemon.url}
-                                    addPokemonToPokedex={addPokemonToPokedex}
                                     pokemon={pokemon}
                                 />
                             )

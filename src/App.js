@@ -1,21 +1,46 @@
-import { createGlobalStyle } from "styled-components"
-import { Router } from "./Router/Router";
-
-const GlobaStyle = createGlobalStyle`
-  *{
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-  }
-`
+import { Router } from "./router/Router";
+import { GlobalContext } from "./contexts/GlobalContext"
+import { useState } from "react";
+import { useRequestData } from "./hooks/useRequesData";
 
 function App() {
+  const [pokedex,setPokedex] = useState([])
+  const [ pokemonList, setPokemonList, isLoading, error ] = useRequestData([], "/")
+
+  const addPokemonToPokedex = (clickedPokemon) => {
+    const isAlreadyInPokedex = pokedex.find((pokemonInPokedex) => 
+      pokemonInPokedex.name === clickedPokemon.name
+    )
+
+    if(!isAlreadyInPokedex){
+      const newPokedex = [...pokedex, clickedPokemon]
+      setPokedex(newPokedex)
+    }
+  }
+
+  const deletePokemonFromPokedex = (clickedPokemon) => {
+    const newPokedex = pokedex.filter((pokemonInPokedex) =>
+      pokemonInPokedex.name !== clickedPokemon.name
+    )
+
+    setPokedex(newPokedex)
+  }
+
+  const context = {
+    pokedex,
+    setPokedex,
+    pokemonList,
+    setPokemonList,
+    isLoading,
+    error,
+    addPokemonToPokedex,
+    deletePokemonFromPokedex
+  }
 
   return (
-    <div>
-      <GlobaStyle/>
+    <GlobalContext.Provider value={context}>
       <Router/>
-    </div>
+    </GlobalContext.Provider>
   );
 };
 
