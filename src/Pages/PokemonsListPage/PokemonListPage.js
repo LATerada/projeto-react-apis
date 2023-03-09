@@ -1,4 +1,3 @@
-import Header from "../../Components/Header/Header"
 import PokemonCard from "../../Components/PokemonCard/PokemonCard"
 import { PageContainer, PageDisplayContainer, Title } from "./PokemonListStyle"
 
@@ -16,7 +15,6 @@ const PokemonListPage = (props) => {
     
     return(
         <PageContainer>
-            {/* <Header addPokemonToPokedex={addPokemonToPokedex}/> */}
             <PageDisplayContainer>
                 <Title>Pokemon List Page</Title>
                     {props.pokemonList

@@ -2,7 +2,6 @@ import axios from "axios"
 import { useEffect } from "react"
 import { useParams } from "react-router-dom"
 import BigPokemonCard from "../../Components/BigPokemonCard/BigPokemonCard"
-import Header from "../../Components/Header/Header"
 import { PageContainer, PageDisplayContainer, Title } from "../PokemonsListPage/PokemonListStyle"
 import { BigCardContainer } from "./PokemonDetailStyle"
 
@@ -22,9 +21,6 @@ const PokemonDetailPage = (props) => {
 
     return(
         <PageContainer>
-            {/* <Header
-                pokedex={props.pokedex}
-                deletePokemonFromPokedex={props.deletePokemonFromPokedex}/> */}
             <PageDisplayContainer>
                 <Title>Pokemon Detail Page</Title>
                 <BigCardContainer>

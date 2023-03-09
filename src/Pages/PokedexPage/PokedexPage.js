@@ -1,4 +1,3 @@
-import Header from "../../Components/Header/Header"
 import PokemonCard from "../../Components/PokemonCard/PokemonCard"
 import { PageContainer, PageDisplayContainer, Title } from "../PokemonsListPage/PokemonListStyle"
 
@@ -7,7 +6,6 @@ import { PageContainer, PageDisplayContainer, Title } from "../PokemonsListPage/
 
     return(
         <PageContainer>
-            {/* <Header/> */}
             <PageDisplayContainer>
                 <Title>Pokedex Page</Title>
                     {pokedex

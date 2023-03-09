@@ -1,11 +1,11 @@
 import { BrowserRouter, Routes, Route } from "react-router-dom"
+import Header from "../Components/Header/Header"
 import PokemonListPage from "../Pages/PokemonsListPage/PokemonListPage"
 import PokedexPage from "../Pages/PokedexPage/PokedexPage"
 import PokemonDetailPage from "../Pages/PokemonDetailPage/PokemonDetailPage"
 import ErrorPage from "../Pages/ErrorPage/ErrorPage"
 import { useEffect, useState } from "react"
 import axios from "axios"
-import Header from "../Components/Header/Header"
 
 export const Router = () => {
     const [pokemonList,setPokemonList] = useState([])
