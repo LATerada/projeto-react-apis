@@ -11,6 +11,7 @@ const Header = () => {
     const navigate = useNavigate();
     const location = useLocation();
     const name = location.pathname.slice(8)
+    console.log(name)
 
     const showAddButton = (detailedPokemon) => {
         const isAlreadyInPokedex = pokedex.find((pokemonInPokedex) => 
@@ -21,6 +22,9 @@ const Header = () => {
         }
         return false
     } 
+    // const pokemon = pokedex.find((pokemon) => pokemon.name === pathnamedPokemon)}
+    //     console.log(pokemon)
+
 
     return(
         <HeaderContainer>
