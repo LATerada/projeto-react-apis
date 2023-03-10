@@ -11,15 +11,20 @@ const PokemonCard = (props) => {
     const location = useLocation()
 
     const [ pokemon, isLoading, isLoaded, error ] = useRequestData({}, `/${props.pokemon.name}`)
-
+    
     return(
-     
         <CardContainer>
-            <PokemonName>{pokemon.name}</PokemonName>
-            <img src={pokemon.sprites.other["official-artwork"].front_default} alt="Imagem do Pokemon"/>
-            <DetailButton onClick={() => goToDetailPage(navigate, props.pokemon.name)} >Details</DetailButton>
-            {location.pathname === "/" ? <AddToPokedexButton onClick={() => addPokemonToPokedex(props.pokemon)}>Add to Pokédex</AddToPokedexButton> : ""}
-            {location.pathname === "/pokedex" ? <DeleteFromPokedexButton onClick={()=> deletePokemonFromPokedex(props.pokemon)} >Delete from Pokédex</DeleteFromPokedexButton> : ""}
+            {isLoaded ?  <>
+                <PokemonName>{pokemon.name}</PokemonName>
+                <img width="100px" src={pokemon.sprites.other["official-artwork"].front_default} alt="Imagem do Pokemon"/>
+                <DetailButton onClick={() => goToDetailPage(navigate, props.pokemon.name)} >Details</DetailButton>
+                {location.pathname === "/" ?
+                    <AddToPokedexButton onClick={() => addPokemonToPokedex(props.pokemon)}>Add to Pokédex</AddToPokedexButton> 
+                : ""}
+                {location.pathname === "/pokedex" ?
+                    <DeleteFromPokedexButton onClick={()=> deletePokemonFromPokedex(props.pokemon)} >Delete from Pokédex</DeleteFromPokedexButton>
+                : ""}
+            </> : ""}
         </CardContainer>
     )
 };
