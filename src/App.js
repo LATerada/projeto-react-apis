@@ -1,20 +1,11 @@
-import { createGlobalStyle } from "styled-components"
-import { PokemonListPage } from "./Pages/PokemonsListPage/PokemonListPage";
-
-const GlobaStyle = createGlobalStyle`
-  *{
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-  }
-`
+import { Router } from "./router/Router";
+import GlobalContextProvider from "./contexts/GlobalContext"
 
 function App() {
   return (
-    <div>
-      <GlobaStyle/>
-      <PokemonListPage/>
-    </div>
+    <GlobalContextProvider>
+      <Router/>
+    </GlobalContextProvider>
   );
 };
 
