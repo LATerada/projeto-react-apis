@@ -8,8 +8,9 @@ const GlobalContextProvider = ({children}) => {
     const [ pokemonList, isLoading, isLoaded, error ] = useRequestData([], "/")
     
     const addPokemonToPokedex = (clickedPokemon) => {
-        const isAlreadyInPokedex = pokedex.find((pokemonInPokedex) => 
-        pokemonInPokedex.name === clickedPokemon.name
+        console.log(clickedPokemon)
+        const isAlreadyInPokedex = pokedex.find(pokemonInPokedex => 
+        pokemonInPokedex["name"] === clickedPokemon.name
         )
 
         if(!isAlreadyInPokedex){
@@ -19,13 +20,14 @@ const GlobalContextProvider = ({children}) => {
     }
     
     const deletePokemonFromPokedex = (clickedPokemon) => {
+        console.log(clickedPokemon)
         const newPokedex = pokedex.filter((pokemonInPokedex) =>
-        pokemonInPokedex.name !== clickedPokemon.name)
+        pokemonInPokedex["name"] !== clickedPokemon.name)
         setPokedex(newPokedex)
     }
 
     return(
-        <GlobalContext.Provider value={{ pokedex, pokemonList, isLoading,isLoaded, error, addPokemonToPokedex, deletePokemonFromPokedex}}>
+        <GlobalContext.Provider value={{ pokedex, pokemonList, isLoading, isLoaded, error, addPokemonToPokedex, deletePokemonFromPokedex }}>
             {children}
         </GlobalContext.Provider>
     )

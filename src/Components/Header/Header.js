@@ -12,7 +12,7 @@ const Header = () => {
 
 
     const fetchPokemon = (pathnamedPokemon) => {
-        const pokemon = pokedex.find((pokemonInPokedex) => pokemonInPokedex.name === pathnamedPokemon)
+        const pokemon = pokedex.find((pokemonInPokedex) => pokemonInPokedex["name"] === pathnamedPokemon)
         return pokemon
     }
     
