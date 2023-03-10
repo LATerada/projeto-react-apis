@@ -11,20 +11,16 @@ export const Router = () => {
             <Header/>
             <Routes>
                 <Route 
-                    index 
-                    element={ <PokemonListPage/> }>
+                    index element={ <PokemonListPage/> }>
                 </Route>
                 <Route 
-                    path="/pokedex" 
-                    element={ <PokedexPage/> }>
+                    path="/pokedex" element={ <PokedexPage/> }>
                 </Route>
                 <Route 
-                    path="/detail/:id" 
-                    element={ <PokemonDetailPage/> }>
+                    path="/detail/:id" element={ <PokemonDetailPage/> }>
                 </Route>
                 <Route 
-                    path="*"
-                    element={ <ErrorPage/> }></Route>
+                    path="*"element={ <ErrorPage/> }></Route>
             </Routes>
         </BrowserRouter>
     )
