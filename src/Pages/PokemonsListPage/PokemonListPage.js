@@ -1,3 +1,4 @@
+import { Box } from "@chakra-ui/react"
 import { useContext } from "react"
 import PokemonCard from "../../components/PokemonCard/PokemonCard"
 import { GlobalContext } from "../../contexts/GlobalContext"
@@ -11,7 +12,7 @@ const PokemonListPage = () => {
     // console.log(pokemonList)
 
     return(
-        <div>
+        <Box bg='gray'>
             <main>
                 <h1>Pokemon List Page</h1>
                 {error ? <p>ERROR!</p> : ""}
@@ -30,7 +31,7 @@ const PokemonListPage = () => {
               
             </main>
 
-        </div>
+        </Box>
     )
 }
 

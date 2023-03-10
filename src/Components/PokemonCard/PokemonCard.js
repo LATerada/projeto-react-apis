@@ -3,6 +3,7 @@ import { goToDetailPage } from "../../router/coordinator";
 import { useContext } from "react";
 import { GlobalContext } from "../../contexts/GlobalContext";
 import { useRequestData } from "../../hooks/useRequesData";
+import { Box, Button } from "@chakra-ui/react";
 
 const PokemonCard = (props) => {
     const { addPokemonToPokedex, deletePokemonFromPokedex } = useContext(GlobalContext)
@@ -12,19 +13,19 @@ const PokemonCard = (props) => {
     const [ pokemon, isLoading, isLoaded, error ] = useRequestData({}, `/${props.pokemon.name}`)
     
     return(
-        <div>
+        <Box>
             {isLoaded ?  <>
                 <p>{pokemon.name}</p>
                 <img width="100px" src={pokemon.sprites.other["official-artwork"].front_default} alt="Imagem do Pokemon"/>
-                <button onClick={() => goToDetailPage(navigate, props.pokemon.name)} >Details</button>
+                <Button onClick={() => goToDetailPage(navigate, props.pokemon.name)} >Details</Button>
                 {location.pathname === "/" ?
-                    <button onClick={() => addPokemonToPokedex(props.pokemon)}>Add to Pokédex</button> 
+                    <Button onClick={() => addPokemonToPokedex(props.pokemon)}>Add to Pokédex</Button> 
                 : ""}
                 {location.pathname === "/pokedex" ?
-                    <button onClick={()=> deletePokemonFromPokedex(props.pokemon)} >Delete from Pokédex</button>
+                    <Button onClick={()=> deletePokemonFromPokedex(props.pokemon)} >Delete from Pokédex</Button>
                 : ""}
             </> : ""}
-        </div>
+        </Box>
     )
 };
 
