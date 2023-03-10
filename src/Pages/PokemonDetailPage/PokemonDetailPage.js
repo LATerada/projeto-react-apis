@@ -5,7 +5,7 @@ import { PageContainer, PageDisplayContainer, Title } from "../PokemonsListPage/
 
 const PokemonDetailPage = () => {
     const { id } = useParams()
-    const [ pokemon, isLoading, error ] = useRequestData({}, `/${id}`)
+    const [ pokemon, isLoading, isLoaded, error ] = useRequestData({}, `/${id}`)
 
     return(
         <PageContainer>
@@ -13,7 +13,8 @@ const PokemonDetailPage = () => {
                 <Title>Pokemon Detail Page</Title>
                 {isLoading? <p>...is loading...</p> : ""}
                 {error ? <p>ERROR!</p> : ""}
-                <BigPokemonCard pokemon={pokemon}/>
+                {isLoaded ? <BigPokemonCard pokemon={pokemon}/> : ""}
+
             </PageDisplayContainer>
         </PageContainer>
     )

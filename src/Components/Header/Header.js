@@ -5,8 +5,7 @@ import { useContext } from "react";
 import { GlobalContext } from "../../contexts/GlobalContext";
 
 const Header = () => {
-    const context = useContext(GlobalContext)
-    const { pokedex, addPokemonToPokedex, deletePokemonFromPokedex } = context
+    const { pokedex, addPokemonToPokedex, deletePokemonFromPokedex } = useContext(GlobalContext)
     const navigate = useNavigate();
     const location = useLocation();
     const name = location.pathname.slice(8)
@@ -18,10 +17,18 @@ const Header = () => {
 
     return(
         <HeaderContainer>
-            {location.pathname === "/pokedex" || location.pathname === `/detail/${name}` ? <PokemonListButton onClick={()=> goToPokemonListPage(navigate)} >All Pokémons</PokemonListButton> : ""}
+            {location.pathname === "/pokedex" || location.pathname === `/detail/${name}` ? 
+                <PokemonListButton onClick={()=> goToPokemonListPage(navigate)} >All Pokémons</PokemonListButton> 
+            : ""}
             <PokemonTitle>Pokémon</PokemonTitle>
-            {location.pathname === "/" ? <PokedexButton onClick={() => goToPokedexPage(navigate)} >Pokedéx</PokedexButton> : "" }
-            {location.pathname === `/detail/${name}` ? fetchPokemon(name) ? <DeleteFromPokedexButton onClick={() => deletePokemonFromPokedex(fetchPokemon(name))} >Delete from Pokedéx</DeleteFromPokedexButton> : <button onClick={() => addPokemonToPokedex(fetchPokemon(name))} >Add to Pokedex</button> : ""}
+            {location.pathname === "/" ? 
+                <PokedexButton onClick={() => goToPokedexPage(navigate)} >Pokedéx</PokedexButton> 
+            : "" }
+            {location.pathname === `/detail/${name}` ?
+                fetchPokemon(name) ? 
+                    <DeleteFromPokedexButton onClick={() => deletePokemonFromPokedex(fetchPokemon(name))} >Delete from Pokedéx</DeleteFromPokedexButton> 
+                : <button onClick={() => addPokemonToPokedex(fetchPokemon(name))} >Add to Pokedex</button> 
+            : ""}
         </HeaderContainer>
     )
 }

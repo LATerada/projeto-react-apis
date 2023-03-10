@@ -5,6 +5,7 @@ import { BASE_URL } from "../constants/url"
 export const useRequestData = (initialState, path) => {
     const [data, setData] = useState(initialState)
     const [isLoading, setIsLoading] = useState(false)
+    const [isLoaded, setIsLoaded] = useState(false)
     const [error,setError] = useState(false)
 
     useEffect(() => {
@@ -14,6 +15,7 @@ export const useRequestData = (initialState, path) => {
             .then(response => {
                 setIsLoading(false)
                 path === "/" ? setData(response.data.results) : setData(response.data)
+                setIsLoaded(true)
             })
             .catch((error) => {
                 setIsLoading(false)
@@ -22,5 +24,5 @@ export const useRequestData = (initialState, path) => {
             })
     },[path])
 
-    return [ data, isLoading, error ]
+    return [ data, isLoading, isLoaded, error ]
 }

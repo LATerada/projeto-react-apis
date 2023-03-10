@@ -4,8 +4,7 @@ import { GlobalContext } from "../../contexts/GlobalContext"
 import { PageContainer, PageDisplayContainer, Title } from "../PokemonsListPage/PokemonListStyle"
 
  const PokedexPage = () => {
-    const context = useContext(GlobalContext)
-    const { pokedex } = context
+    const { pokedex } = useContext(GlobalContext)
     console.log(pokedex)
 
     return(
