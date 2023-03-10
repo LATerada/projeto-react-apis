@@ -1,4 +1,3 @@
-import { useEffect } from "react"
 import { useParams } from "react-router-dom"
 import BigPokemonCard from "../../components/BigPokemonCard/BigPokemonCard"
 import { useRequestData } from "../../hooks/useRequesData"
@@ -7,9 +6,6 @@ import { PageContainer, PageDisplayContainer, Title } from "../PokemonsListPage/
 const PokemonDetailPage = () => {
     const { id } = useParams()
     const [ pokemon, isLoading, error ] = useRequestData({}, `/${id}`)
-
-    useEffect(() => {
-    },[id])
 
     return(
         <PageContainer>

@@ -1,7 +1,7 @@
 import { AddToPokedexButton, CardContainer, DeleteFromPokedexButton, DetailButton, PokemonName } from "./PokemonCardStyle";
 import { useLocation, useNavigate } from "react-router-dom";
 import { goToDetailPage } from "../../router/coordinator";
-import { useContext, useEffect } from "react";
+import { useContext } from "react";
 import { GlobalContext } from "../../contexts/GlobalContext";
 import { useRequestData } from "../../hooks/useRequesData";
 
@@ -13,12 +13,10 @@ const PokemonCard = (props) => {
 
     const [ pokemon, isLoading, error ] = useRequestData({}, `/${props.pokemon.name}`)
 
-    useEffect(()=> {
-        // console.log(pokemon.sprites.other["official-artwork"].front_default)
-    },[])
-
     return(
         <CardContainer>
+            { isLoading ? <p>is Loading...</p> : "" }
+            { error ? <p>ERROR!</p> : "" }
             <PokemonName>{pokemon.name}</PokemonName>
             {/* <img src={pokemon.sprites.other["official-artwork"].front_default} alt="Imagem do Pokemon"/> */}
             <DetailButton onClick={() => goToDetailPage(navigate, props.pokemon.name)} >Details</DetailButton>

@@ -4,7 +4,7 @@ import { useState } from "react";
 import { useRequestData } from "./hooks/useRequesData";
 
 function App() {
-  const [pokedex,setPokedex] = useState([])
+  const [ pokedex,setPokedex ] = useState([])
   const [ pokemonList, isLoading, error ] = useRequestData([], "/")
 
   const addPokemonToPokedex = (clickedPokemon) => {
