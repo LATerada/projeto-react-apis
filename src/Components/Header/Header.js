@@ -1,4 +1,3 @@
-import { DeleteFromPokedexButton, HeaderContainer, PokedexButton, PokemonListButton, PokemonTitle } from "./HeaderStyle";
 import { useNavigate, useLocation } from "react-router-dom";
 import { goToPokedexPage, goToPokemonListPage } from "../../router/coordinator";
 import { useContext, useEffect } from "react";
@@ -22,25 +21,25 @@ const Header = () => {
 
 
     return(
-        <HeaderContainer>
+        <header>
             {isLoaded ? 
             <>
                 {location.pathname === "/pokedex" || location.pathname === `/detail/${name}` ? 
-                <PokemonListButton onClick={()=> goToPokemonListPage(navigate)} >All Pokémons</PokemonListButton> 
+                <button onClick={()=> goToPokemonListPage(navigate)} >All Pokémons</button> 
                 : ""}
-                <PokemonTitle>Pokémon</PokemonTitle>
+                <h1>Pokémon</h1>
                 {location.pathname === "/" ? 
-                    <PokedexButton onClick={() => goToPokedexPage(navigate)} >Pokedéx</PokedexButton> 
+                    <button onClick={() => goToPokedexPage(navigate)} >Pokedéx</button> 
                 : "" }
                 {location.pathname === `/detail/${name}` ?
                     fetchPokemon(name) ? 
-                        <DeleteFromPokedexButton onClick={() => deletePokemonFromPokedex(fetchPokemon(name))} >Delete from Pokedéx</DeleteFromPokedexButton> 
+                        <button onClick={() => deletePokemonFromPokedex(fetchPokemon(name))} >Delete from Pokedéx</button> 
                     : <button onClick={() => addPokemonToPokedex(fetchPokemon(name))} >Add to Pokedex</button> 
                 : ""}
             </> 
             : ""}
        
-        </HeaderContainer>
+        </header>
     )
 }
 

@@ -1,10 +1,14 @@
 import { Router } from "./router/Router";
 import GlobalContextProvider from "./contexts/GlobalContext"
+import { ChakraProvider } from "@chakra-ui/react";
+import theme from "./theme";
 
-function App() {
+const App = () => {
   return (
     <GlobalContextProvider>
-      <Router/>
+      <ChakraProvider resetCSS theme={theme}>
+        <Router/>
+      </ChakraProvider>
     </GlobalContextProvider>
   );
 };

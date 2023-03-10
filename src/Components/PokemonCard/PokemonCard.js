@@ -1,4 +1,3 @@
-import { AddToPokedexButton, CardContainer, DeleteFromPokedexButton, DetailButton, PokemonName } from "./PokemonCardStyle";
 import { useLocation, useNavigate } from "react-router-dom";
 import { goToDetailPage } from "../../router/coordinator";
 import { useContext } from "react";
@@ -13,19 +12,19 @@ const PokemonCard = (props) => {
     const [ pokemon, isLoading, isLoaded, error ] = useRequestData({}, `/${props.pokemon.name}`)
     
     return(
-        <CardContainer>
+        <div>
             {isLoaded ?  <>
-                <PokemonName>{pokemon.name}</PokemonName>
+                <p>{pokemon.name}</p>
                 <img width="100px" src={pokemon.sprites.other["official-artwork"].front_default} alt="Imagem do Pokemon"/>
-                <DetailButton onClick={() => goToDetailPage(navigate, props.pokemon.name)} >Details</DetailButton>
+                <button onClick={() => goToDetailPage(navigate, props.pokemon.name)} >Details</button>
                 {location.pathname === "/" ?
-                    <AddToPokedexButton onClick={() => addPokemonToPokedex(props.pokemon)}>Add to Pokédex</AddToPokedexButton> 
+                    <button onClick={() => addPokemonToPokedex(props.pokemon)}>Add to Pokédex</button> 
                 : ""}
                 {location.pathname === "/pokedex" ?
-                    <DeleteFromPokedexButton onClick={()=> deletePokemonFromPokedex(props.pokemon)} >Delete from Pokédex</DeleteFromPokedexButton>
+                    <button onClick={()=> deletePokemonFromPokedex(props.pokemon)} >Delete from Pokédex</button>
                 : ""}
             </> : ""}
-        </CardContainer>
+        </div>
     )
 };
 
