@@ -1,4 +1,4 @@
-import { Box } from "@chakra-ui/react"
+import { Box, Heading } from "@chakra-ui/react"
 import { useContext } from "react"
 import PokemonCard from "../../components/PokemonCard/PokemonCard"
 import { GlobalContext } from "../../contexts/GlobalContext"
@@ -12,11 +12,10 @@ const PokemonListPage = () => {
     // console.log(pokemonList)
 
     return(
-        <Box bg='gray'>
-            <main>
-                <h1>Pokemon List Page</h1>
-                {error ? <p>ERROR!</p> : ""}
-                {isLoading ? <p>...is loading...</p> : ""}
+        <Box bg='gray' >
+            <Heading color='white'>Todos Pokémons</Heading>
+                {error ? <p>ERRO!</p> : ""}
+                {isLoading ? <p>carregando...</p> : ""}
                 {isLoaded ? filteredPokemonList().map((pokemon) => {
                             return(
                                 <PokemonCard 
@@ -25,12 +24,8 @@ const PokemonListPage = () => {
                                 />
                             )
                         }
-                        ) : ""
+                    ) : ""
                 }
-     
-              
-            </main>
-
         </Box>
     )
 }

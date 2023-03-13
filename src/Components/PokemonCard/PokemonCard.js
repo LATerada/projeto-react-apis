@@ -17,12 +17,12 @@ const PokemonCard = (props) => {
             {isLoaded ?  <>
                 <p>{pokemon.name}</p>
                 <img width="100px" src={pokemon.sprites.other["official-artwork"].front_default} alt="Imagem do Pokemon"/>
-                <Button onClick={() => goToDetailPage(navigate, props.pokemon.name)} >Details</Button>
+                <Button onClick={() => goToDetailPage(navigate, props.pokemon.name)} >Detalhes</Button>
                 {location.pathname === "/" ?
-                    <Button onClick={() => addPokemonToPokedex(props.pokemon)}>Add to Pokédex</Button> 
+                    <Button onClick={() => addPokemonToPokedex(props.pokemon)}>Capturar!</Button> 
                 : ""}
                 {location.pathname === "/pokedex" ?
-                    <Button onClick={()=> deletePokemonFromPokedex(props.pokemon)} >Delete from Pokédex</Button>
+                    <Button onClick={()=> deletePokemonFromPokedex(props.pokemon)} >Excluir</Button>
                 : ""}
             </> : ""}
         </Box>

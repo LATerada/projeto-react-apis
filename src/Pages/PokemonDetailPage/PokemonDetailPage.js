@@ -1,4 +1,4 @@
-import { Box } from "@chakra-ui/react"
+import { Box, Heading } from "@chakra-ui/react"
 import { useParams } from "react-router-dom"
 import BigPokemonCard from "../../components/BigPokemonCard/BigPokemonCard"
 import { useRequestData } from "../../hooks/useRequesData"
@@ -9,13 +9,10 @@ const PokemonDetailPage = () => {
 
     return(
         <Box bg='gray'>
-            <main>
-                <h1>Pokemon Detail Page</h1>
-                {isLoading? <p>...is loading...</p> : ""}
-                {error ? <p>ERROR!</p> : ""}
-                {isLoaded ? <BigPokemonCard pokemon={pokemon}/> : ""}
-
-            </main>
+            <Heading>Detalhes</Heading>
+            {isLoading? <p>...is loading...</p> : ""}
+            {error ? <p>ERROR!</p> : ""}
+            {isLoaded ? <BigPokemonCard pokemon={pokemon}/> : ""}
         </Box>
     )
 }

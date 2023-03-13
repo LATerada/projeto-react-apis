@@ -27,7 +27,7 @@ const Header = () => {
             {isLoaded ? 
             <Grid h='10rem' w='full' templateColumns='repeat(3, 1fr)' justifyItems='center' alignItems='center' gap={12}>
                 {location.pathname === "/pokedex" || location.pathname === `/detail/${name}` ? 
-                <Button onClick={()=> goToPokemonListPage(navigate)} >All Pokémons</Button> 
+                <Button onClick={()=> goToPokemonListPage(navigate)} >Todos Pokémons</Button> 
                 : " "}
                 <GridItem colStart={2}><img src={logo}></img></GridItem>
                 {location.pathname === "/" ? 
@@ -35,8 +35,8 @@ const Header = () => {
                 : "" }
                 {location.pathname === `/detail/${name}` ?
                     fetchPokemon(name) ? 
-                        <Button onClick={() => deletePokemonFromPokedex(fetchPokemon(name))} >Delete from Pokedéx</Button> 
-                    : <Button onClick={() => addPokemonToPokedex(fetchPokemon(name))} >Add to Pokedex</Button> 
+                        <Button onClick={() => deletePokemonFromPokedex(fetchPokemon(name))} >Excluir da Pokedéx</Button> 
+                    : <Button onClick={() => addPokemonToPokedex(fetchPokemon(name))} >Adicionar à Pokedex</Button> 
                 : ""}
             </Grid> 
             : ""}
