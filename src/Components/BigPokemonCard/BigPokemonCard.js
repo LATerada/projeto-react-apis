@@ -5,7 +5,6 @@ import { pokemonType } from "../../utils/pokemonTypes";
 
 const BigPokemonCard = (props) => {
     const { pokemon } = props
-    console.log(pokemon.sprites.versions["generation-v"]["black-white"])
 
     return(
         <Grid position='relative' w='86.821rem' h='41.438rem' borderRadius='2.368rem' templateColumns='repeat(4,1fr)' templateRows='repeat(4,1fr)' justifyItems='center' alignItems='center' bg={cardColor(pokemon.types[0].type.name)}>

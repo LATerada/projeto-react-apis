@@ -9,7 +9,7 @@ export function cardColor (pokemonType){
         return '#004170';
     }
     if(pokemonType === 'electric'){
-        return '#F9DB62';
+        return '#F9DD6C';
     }
     if(pokemonType === 'fairy'){
         return '#E7ACC9';
