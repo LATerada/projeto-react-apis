@@ -64,12 +64,8 @@ const theme = extendTheme({
 
                 px: '0.25rem',
                 py: '0.625rem',
-                w:'9.125rem',
-                h:'2.375rem',
-
-                position:'absolute',
-                right:'1.375rem',
-                bottom: '0.813rem',
+                w:'14.125rem',
+                h:'3.563rem',
 
                 bg: '#FF6262',
                 radius: 'lg'
@@ -83,12 +79,12 @@ const theme = extendTheme({
                 border: 'none',
                 color:'white',
 
-                w:'4.625rem',
-                h:'1.5rem',
-
                 position:'absolute',
                 left:'1.438rem',
                 bottom:'1.25rem', 
+
+                w:'4.625rem',
+                h:'1.5rem',
              },
             captureCard: {
                 fontFamily: 'Poppins',
@@ -106,7 +102,26 @@ const theme = extendTheme({
                 bottom: '0.813rem',
 
                 bg:'white'
-            }
+            },
+            deleteCard: {
+                fontFamily: 'Poppins',
+                fontSize: '1rem',
+                fontWeight: 'normal',
+                lineHeight: '1.5rem',
+                color:'white',
+
+                px: '0.25rem',
+                py: '0.625rem',
+                w:'9.125rem',
+                h:'2.375rem',
+
+                position:'absolute',
+                right:'1.375rem',
+                bottom: '0.813rem',
+
+                bg: '#FF6262',
+                radius: 'lg'
+             },
           }
         },
       },

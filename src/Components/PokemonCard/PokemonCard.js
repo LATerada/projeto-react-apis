@@ -28,7 +28,7 @@ const PokemonCard = (props) => {
                         <Button variant={'captureCard'} onClick={() => addPokemonToPokedex(props.pokemon)}>Capturar!</Button> 
                     : ""}
                     {location.pathname === "/pokedex" ?
-                        <Button variant={'delete'} onClick={()=> deletePokemonFromPokedex(props.pokemon)} >Excluir</Button>
+                        <Button variant={'deleteCard'} onClick={()=> deletePokemonFromPokedex(props.pokemon)} >Excluir</Button>
                     : ""}
                 </Box>
             : ""}
