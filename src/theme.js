@@ -1,4 +1,4 @@
-import { border, extendTheme } from "@chakra-ui/react";
+import { extendTheme } from "@chakra-ui/react";
 
 
 const theme = extendTheme({
@@ -35,6 +35,24 @@ const theme = extendTheme({
             ml:'1.438rem',
             mt:'1.563rem'
         },
+        baseStats: {
+            fontFamily: 'Inter',
+            fontSize: '1.5rem',
+            fontWeight: 'bold',
+            lineHeight: '1.063rem',
+        },
+        stat: {
+            fontFamily: 'Inter',
+            fontSize: '1rem',
+            fontWeight: 'normal',
+            lineHeight: '0.5rem',
+        },
+        move: {
+            fontFamily: 'Montserrat',
+            fontSize: '0.875rem',
+            fontWeight: 'normal',
+            lineHeight: '1.063rem',
+        }
     },
     components: {
         Button: {
