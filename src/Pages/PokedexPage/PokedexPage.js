@@ -8,9 +8,9 @@ import { GlobalContext } from "../../contexts/GlobalContext"
     console.log(pokedex)
 
     return(
-        <Box bg='gray' pb='305px' flex justify='center'>
-            <Text pt='60px' pb='55px' pl='100px' textStyle='caption'>Meus Pokémons</Text>
-            <Grid px='40' templateColumns='repeat(3, 1fr)' justifyItems='center' rowGap='16'>
+        <Box bg='gray' pb='305px' minH='675px' >
+            <Text pt='60px' pb='55px' pl='40px'  textStyle='caption'>Meus Pokémons</Text>
+            <Grid px='40px' templateColumns='repeat(3, 1fr)' justifyItems='center' rowGap='16'>
                 {pokedex
                     .map((pokemon) => {
                         return(
