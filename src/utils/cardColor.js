@@ -39,7 +39,7 @@ export function cardColor (pokemonType){
         return '#BF9762'
     }
     if(pokemonType === 'poison'){
-        return '#B063AF'
+        return '#8D4f8C'
     }
     if(pokemonType === 'psychic'){
         return '#EF769A'
