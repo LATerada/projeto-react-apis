@@ -5,7 +5,7 @@ export const GlobalContext = createContext();
 
 const GlobalContextProvider = ({children}) => {
     const [ pokedex,setPokedex ] = useState([])
-    const [ pokemonList, isLoading, isLoaded, error ] = useRequestData([], "/")
+    const [ pokemonList, isLoading, isLoaded, error ] = useRequestData([], "/?limit=151")
     
     const addPokemonToPokedex = (clickedPokemon) => {
         console.log(clickedPokemon)

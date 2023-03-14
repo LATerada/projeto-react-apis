@@ -11,7 +11,7 @@ const PokemonDetailPage = () => {
     return(
         <Flex position='relative' px='1.563rem' bg='gray' pb='180px' minH='675px' wrap='wrap' justifyContent='center'>
             <Text w='full' pt='60px' pb='55px' textStyle='caption'>Detalhes</Text>
-            <Image position='absolute' top='-8rem' w='56.813rem' src={pokeball}/>
+            <Image position='absolute' top='-7rem' w='56.813rem' src={pokeball}/>
             {isLoading? <p>...carregando...</p> : ""}
             {error ? <p>ERRO!</p> : ""}
             {isLoaded ? <BigPokemonCard pokemon={pokemon}/> : ""}

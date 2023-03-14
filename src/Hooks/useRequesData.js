@@ -14,7 +14,7 @@ export const useRequestData = (initialState, path) => {
             .get(`${BASE_URL}${path}`)
             .then(response => {
                 setIsLoading(false)
-                path === "/" ? setData(response.data.results) : setData(response.data)
+                path === "/?limit=151" ? setData(response.data.results) : setData(response.data)
                 setIsLoaded(true)
             })
             .catch((error) => {
