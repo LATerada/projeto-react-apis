@@ -70,6 +70,21 @@ const theme = extendTheme({
                 bg: '#FF6262',
                 radius: 'lg'
              },
+             capturar: {
+                fontFamily: 'Poppins',
+                fontSize: '1rem',
+                fontWeight: 'normal',
+                lineHeight: '1.5rem',
+
+                px: '0.25rem',
+                py: '0.625rem',
+                w:'14.125rem',
+                h:'3.563rem',
+
+                border:'2px',
+                borderColor:'black',
+                radius: 'lg',
+             },
             details: {
                 fontFamily: 'Poppins',
                 fontSize: '1rem',

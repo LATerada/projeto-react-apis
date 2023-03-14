@@ -37,7 +37,7 @@ const Header = () => {
                 {location.pathname === `/detail/${name}` ?
                     fetchPokemon(name) ? 
                         <Button variant={'delete'} onClick={() => deletePokemonFromPokedex(fetchPokemon(name))} >Excluir da Pokedéx</Button> 
-                    : <Button variant={'delete'} onClick={() => addPokemonToPokedex(fetchPokemon(name))} >Capturar!</Button> 
+                    : <Button variant={'capturar'} onClick={() => addPokemonToPokedex(fetchPokemon(name))} >Capturar!</Button> 
                 : ""}
             </Grid> 
             : ""}
