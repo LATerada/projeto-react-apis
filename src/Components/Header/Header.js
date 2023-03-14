@@ -3,7 +3,7 @@ import { goToPokedexPage, goToPokemonListPage } from "../../router/coordinator";
 import { useContext, useEffect } from "react";
 import { GlobalContext } from "../../contexts/GlobalContext";
 import logo from "../../assets/logo.png"
-import { Box, Button, Grid, GridItem } from "@chakra-ui/react";
+import { Button, Grid, GridItem } from "@chakra-ui/react";
 import { ChevronLeftIcon } from "@chakra-ui/icons"
 
 const Header = () => {
@@ -26,20 +26,20 @@ const Header = () => {
     return(
         <>
             {isLoaded ? 
-            <Grid h='10rem' w='full' templateColumns='repeat(3, 1fr)' justifyItems='center' alignItems='center' gap={12}>
-                {location.pathname === "/pokedex" || location.pathname === `/detail/${name}` ? 
-                <Button variant={'pokemonList'} onClick={()=> goToPokemonListPage(navigate)} > <ChevronLeftIcon></ChevronLeftIcon>Todos Pokémons</Button> 
-                : " "}
-                <GridItem colStart={2}><img src={logo} alt="Pokemon"></img></GridItem>
-                {location.pathname === "/" ? 
-                    <Button variant={'pokedex'} onClick={() => goToPokedexPage(navigate)} >Pokedéx</Button> 
-                : "" }
-                {location.pathname === `/detail/${name}` ?
-                    fetchPokemon(name) ? 
-                        <Button variant={'delete'} onClick={() => deletePokemonFromPokedex(fetchPokemon(name))} >Excluir da Pokedéx</Button> 
-                    : <Button variant={'capturar'} onClick={() => addPokemonToPokedex(fetchPokemon(name))} >Capturar!</Button> 
-                : ""}
-            </Grid> 
+                <Grid h='10rem' w='full' templateColumns='repeat(3, 1fr)' justifyItems='center' alignItems='center' gap={12}>
+                    {location.pathname === "/pokedex" || location.pathname === `/detail/${name}` ? 
+                        <Button variant={'pokemonList'} onClick={()=> goToPokemonListPage(navigate)} > <ChevronLeftIcon></ChevronLeftIcon>Todos Pokémons</Button> 
+                    : " "}
+                    <GridItem colStart={2}><img src={logo} alt="Pokemon"></img></GridItem>
+                    {location.pathname === "/" ? 
+                        <Button variant={'pokedex'} onClick={() => goToPokedexPage(navigate)} >Pokedéx</Button> 
+                    : "" }
+                    {location.pathname === `/detail/${name}` ?
+                        fetchPokemon(name) ? 
+                            <Button variant={'delete'} onClick={() => deletePokemonFromPokedex(fetchPokemon(name))} >Excluir da Pokedéx</Button> 
+                        : <Button variant={'capturar'} onClick={() => addPokemonToPokedex(fetchPokemon(name))} >Capturar!</Button> 
+                    : ""}
+                </Grid> 
             : ""}
        
         </>
