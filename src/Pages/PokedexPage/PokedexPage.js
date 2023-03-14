@@ -1,4 +1,4 @@
-import { Box, Heading } from "@chakra-ui/react"
+import { Box, Flex, Text } from "@chakra-ui/react"
 import { useContext } from "react"
 import PokemonCard from "../../components/PokemonCard/PokemonCard"
 import { GlobalContext } from "../../contexts/GlobalContext"
@@ -8,8 +8,9 @@ import { GlobalContext } from "../../contexts/GlobalContext"
     console.log(pokedex)
 
     return(
-        <Box bg='gray'>
-            <Heading>Pokedex</Heading>
+        <Box bg='gray' pb='305px'>
+            <Text pt='60px' pb='55px' pl='100px' textStyle='caption'>Meus Pokémons</Text>
+            <Flex wrap='wrap' justify='center' gap='2rem'>
                 {pokedex
                     .map((pokemon) => {
                         return(
@@ -18,7 +19,10 @@ import { GlobalContext } from "../../contexts/GlobalContext"
                                 pokemon={pokemon}
                             />
                         )
-                    })}
+                    })
+                }
+            </Flex>
+ 
         </Box>
     )
 }

@@ -4,6 +4,7 @@ import { useContext, useEffect } from "react";
 import { GlobalContext } from "../../contexts/GlobalContext";
 import logo from "../../assets/logo.png"
 import { Box, Button, Grid, GridItem } from "@chakra-ui/react";
+import { ChevronLeftIcon } from "@chakra-ui/icons"
 
 const Header = () => {
     const { pokedex, isLoaded, addPokemonToPokedex, deletePokemonFromPokedex } = useContext(GlobalContext)
@@ -23,25 +24,25 @@ const Header = () => {
 
 
     return(
-        <Box>
+        <>
             {isLoaded ? 
             <Grid h='10rem' w='full' templateColumns='repeat(3, 1fr)' justifyItems='center' alignItems='center' gap={12}>
                 {location.pathname === "/pokedex" || location.pathname === `/detail/${name}` ? 
-                <Button onClick={()=> goToPokemonListPage(navigate)} >Todos Pokémons</Button> 
+                <Button variant={'pokemonList'} onClick={()=> goToPokemonListPage(navigate)} > <ChevronLeftIcon></ChevronLeftIcon>Todos Pokémons</Button> 
                 : " "}
-                <GridItem colStart={2}><img src={logo}></img></GridItem>
+                <GridItem colStart={2}><img src={logo} alt="Pokemon"></img></GridItem>
                 {location.pathname === "/" ? 
-                    <Button onClick={() => goToPokedexPage(navigate)} >Pokedéx</Button> 
+                    <Button variant={'pokedex'} onClick={() => goToPokedexPage(navigate)} >Pokedéx</Button> 
                 : "" }
                 {location.pathname === `/detail/${name}` ?
                     fetchPokemon(name) ? 
-                        <Button onClick={() => deletePokemonFromPokedex(fetchPokemon(name))} >Excluir da Pokedéx</Button> 
-                    : <Button onClick={() => addPokemonToPokedex(fetchPokemon(name))} >Adicionar à Pokedex</Button> 
+                        <Button variant={'delete'} onClick={() => deletePokemonFromPokedex(fetchPokemon(name))} >Excluir da Pokedéx</Button> 
+                    : <Button variant={'delete'} onClick={() => addPokemonToPokedex(fetchPokemon(name))} >Capturar!</Button> 
                 : ""}
             </Grid> 
             : ""}
        
-        </Box>
+        </>
     )
 }
 
