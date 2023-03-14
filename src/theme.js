@@ -21,6 +21,9 @@ const theme = extendTheme({
             fontWeight: 'bold',
             lineHeight: '2.421rem',
             color:'white',
+
+            ml:'1.438rem',
+
         },
         h2: {
             fontFamily: 'Inter',
@@ -28,6 +31,9 @@ const theme = extendTheme({
             fontWeight: 'bold',
             lineHeight: '1.21rem',
             color:'white',
+
+            ml:'1.438rem',
+            mt:'1.563rem'
         },
     },
     components: {
