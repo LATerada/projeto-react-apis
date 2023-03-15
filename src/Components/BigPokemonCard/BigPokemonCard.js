@@ -9,8 +9,6 @@ const BigPokemonCard = (props) => {
 
     let totalStats = 0
 
-    console.log(pokemon.moves.slice(0,5)[0].move.name)
-
     return(
         <Grid 
         position='relative' w='86.821rem' h='41.438rem' borderRadius='2.368rem' templateColumns='repeat(4,1fr)' templateRows='repeat(4,1fr)' justifyItems='center' alignItems='center' bg={cardColor(pokemon.types[0].type.name)}>
@@ -78,10 +76,10 @@ const BigPokemonCard = (props) => {
             <GridItem 
             colStart={3} rowStart={2} rowSpan={3} ml='5rem' w='18.25rem' h='28.313rem' bg='white' borderRadius='0.5rem'>
                 <Text
-                pt='1.125rem' pl='1.125rem' textStyle={'baseStats'}>Moves</Text>
-                {pokemon.moves.slice(0,4).map((move)=> {
+                py='1.125rem' pl='1.125rem' textStyle={'baseStats'}>Moves</Text>
+                {pokemon.moves.slice(0,5).map((move)=> {
                     return (
-                        <Text key={move.move.name} textStyle={'move'} bg='gray'>{move.move.name}</Text>
+                        <Text key={move.move.name} w='fit-content' p='0.625rem' ml='1.125rem' mt='1rem' border='1px dashed rgba(0, 0, 0, 0.14)' borderRadius='0.75rem' textStyle={'move'} bg='#ECECEC'>{move.move.name.charAt(0).toUpperCase() + move.move.name.slice(1)}</Text>
                     )
                 })}
             </GridItem>
