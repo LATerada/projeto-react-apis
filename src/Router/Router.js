@@ -1,9 +1,8 @@
 import { BrowserRouter, Routes, Route } from "react-router-dom"
-import Header from "../components/Header/Header"
-import PokemonListPage from "../pages/PokemonsListPage/PokemonListPage"
-import PokedexPage from "../pages/PokedexPage/PokedexPage"
-import PokemonDetailPage from "../pages/PokemonDetailPage/PokemonDetailPage"
-import ErrorPage from "../pages/ErrorPage/ErrorPage"
+import Header from "../components/Header"
+import PokemonListPage from "../pages/PokemonListPage"
+import PokedexPage from "../pages/PokedexPage"
+import PokemonDetailPage from "../pages/PokemonDetailPage"
 
 export const Router = () => {
     return(
@@ -19,8 +18,6 @@ export const Router = () => {
                 <Route 
                     path="/detail/:id" element={ <PokemonDetailPage/> }>
                 </Route>
-                <Route 
-                    path="*"element={ <ErrorPage/> }></Route>
             </Routes>
         </BrowserRouter>
     )

@@ -1,8 +1,8 @@
 import { useNavigate, useLocation } from "react-router-dom";
-import { goToPokedexPage, goToPokemonListPage } from "../../router/coordinator";
+import { goToPokedexPage, goToPokemonListPage } from "../router/coordinator";
 import { useContext, useEffect } from "react";
-import { GlobalContext } from "../../contexts/GlobalContext";
-import logo from "../../assets/logo.png"
+import { GlobalContext } from "../contexts/GlobalContext";
+import logo from "../assets/logo.png"
 import { Button, Grid, GridItem } from "@chakra-ui/react";
 import { ChevronLeftIcon } from "@chakra-ui/icons"
 

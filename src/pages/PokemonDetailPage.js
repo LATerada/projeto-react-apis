@@ -1,8 +1,8 @@
 import { Flex, Image, Text } from "@chakra-ui/react"
 import { useParams } from "react-router-dom"
-import BigPokemonCard from "../../components/BigPokemonCard/BigPokemonCard"
-import { useRequestData } from "../../hooks/useRequesData"
-import pokeball from "../../assets/poke-shadow2.png"
+import BigPokemonCard from "../components/BigPokemonCard"
+import { useRequestData } from "../hooks/useRequesData"
+import pokeball from "../assets/poke-shadow2.png"
 
 const PokemonDetailPage = () => {
     const { id } = useParams()

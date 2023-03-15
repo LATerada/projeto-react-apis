@@ -1,12 +1,12 @@
 import { useLocation, useNavigate } from "react-router-dom";
-import { goToDetailPage } from "../../router/coordinator";
+import { goToDetailPage } from "../router/coordinator";
 import { useContext } from "react";
-import { GlobalContext } from "../../contexts/GlobalContext";
-import { useRequestData } from "../../hooks/useRequesData";
+import { GlobalContext } from "../contexts/GlobalContext";
+import { useRequestData } from "../hooks/useRequesData";
 import { Box, Button, Flex, Image, Text } from "@chakra-ui/react";
-import { cardColor } from "../../utils/cardColor";
-import pokeball from '../../assets/poke-shadow.png'
-import { pokemonType } from "../../utils/pokemonTypes";
+import { cardColor } from "../utils/cardColor";
+import pokeball from '../assets/poke-shadow.png'
+import { pokemonType } from "../utils/pokemonTypes";
 
 const PokemonCard = (props) => {
     const { addPokemonToPokedex, deletePokemonFromPokedex } = useContext(GlobalContext)

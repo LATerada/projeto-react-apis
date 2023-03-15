@@ -1,7 +1,7 @@
 import { Box, Grid, Text } from "@chakra-ui/react"
 import { useContext } from "react"
-import PokemonCard from "../../components/PokemonCard/PokemonCard"
-import { GlobalContext } from "../../contexts/GlobalContext"
+import PokemonCard from "../components/PokemonCard"
+import { GlobalContext } from "../contexts/GlobalContext"
 
 
 const PokemonListPage = () => {
