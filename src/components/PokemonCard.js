@@ -3,10 +3,12 @@ import { goToDetailPage } from "../router/coordinator";
 import { useContext } from "react";
 import { GlobalContext } from "../contexts/GlobalContext";
 import { useRequestData } from "../hooks/useRequesData";
-import { Box, Button, Flex, Image, Text } from "@chakra-ui/react";
+import { Box, Button, Flex, Image, Text, useDisclosure } from "@chakra-ui/react";
 import { cardColor } from "../utils/cardColor";
 import pokeball from '../assets/poke-shadow.png'
 import { pokemonType } from "../utils/pokemonTypes";
+import DeletAlert from "./DeleteAlert";
+import CaptureAlert from "./CapteureAlert";
 
 const PokemonCard = (props) => {
     const { addPokemonToPokedex, deletePokemonFromPokedex } = useContext(GlobalContext)
@@ -15,11 +17,18 @@ const PokemonCard = (props) => {
 
     const [ pokemon, isLoading, isLoaded, error ] = useRequestData({}, `/${props.pokemon.name}`)
 
+    const { isOpen, onOpen, onClose } = useDisclosure()
+    const chamarModal = () => {
+        
+    }
+    
     return(
         <>
           {isLoaded ?  
                 <Box position='relative' w='27.5rem' h='13.125rem' bg={cardColor(pokemon.types[0].type.name)} borderRadius='0.75rem'>
                     <Text textStyle={'h2'}>{pokemon.id < 10 ? `#0${pokemon.id}`: `#${pokemon.id}`}</Text>
+                    <DeletAlert></DeletAlert>
+                    <CaptureAlert></CaptureAlert>
                     <Text textStyle={'h1'} >{pokemon.name.charAt(0).toUpperCase() + pokemon.name.slice(1)}</Text>
                     <Image zIndex='1' position='absolute' right='0.688rem' top='-3.313rem' width='200px' src={pokemon.sprites.other["official-artwork"].front_default} alt="Imagem do Pokemon"/>
                     <Image position='absolute' right='0' top='0' src={pokeball} />

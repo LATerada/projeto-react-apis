@@ -52,6 +52,13 @@ const theme = extendTheme({
             fontSize: '0.875rem',
             fontWeight: 'normal',
             lineHeight: '1.063rem',
+        },
+        modalText: {
+            fontFamily: 'Poppins',
+            fontSize: '1rem',
+            fontWeight: 'bold',
+            lineHeight: '1.5rem',
+            border: 'none',
         }
     },
 

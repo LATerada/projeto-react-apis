@@ -8,7 +8,6 @@ const GlobalContextProvider = ({children}) => {
     const [ pokemonList, isLoading, isLoaded, error ] = useRequestData([], "/?limit=30")
     
     const addPokemonToPokedex = (clickedPokemon) => {
-        console.log(clickedPokemon)
         const isAlreadyInPokedex = pokedex.find(pokemonInPokedex => 
         pokemonInPokedex["name"] === clickedPokemon.name
         )
@@ -17,10 +16,10 @@ const GlobalContextProvider = ({children}) => {
             const newPokedex = [...pokedex, clickedPokemon]
             setPokedex(newPokedex)
         }
+        alert(`Gotcha!`)
     }
     
     const deletePokemonFromPokedex = (clickedPokemon) => {
-        console.log(clickedPokemon)
         const newPokedex = pokedex.filter((pokemonInPokedex) =>
         pokemonInPokedex["name"] !== clickedPokemon.name)
         setPokedex(newPokedex)

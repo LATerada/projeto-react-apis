@@ -13,20 +13,19 @@ const Header = () => {
     const name = location.pathname.slice(8)
 
     const fetchPokemon = (pathnamedPokemon) => {
-        const pokemon = pokedex.find((pokemonInPokedex) => pokemonInPokedex["name"] === pathnamedPokemon)
-        console.log(pokemon)
-        if(pokemon){
-            return pokemon
-        }else if(!pokemon){
+        const pokemonFromPokedex = pokedex.find((pokemonInPokedex) => pokemonInPokedex["name"] === pathnamedPokemon)
+
+        if(pokemonFromPokedex){
+            return pokemonFromPokedex
+        }else if(!pokemonFromPokedex){
             const pokemonFromPokelist = pokemonList.find((pokemonInPokelist) => pokemonInPokelist["name"] === pathnamedPokemon)
-            console.log(pokemonFromPokelist)
             return pokemonFromPokelist
         }
     }
     
-    useEffect(() => {
-        // console.log({pokedex, name})
-    },[pokedex,name])
+    // useEffect(() => {
+    //     // console.log({pokedex, name})
+    // },[pokedex,name])
 
     return(
         <>
