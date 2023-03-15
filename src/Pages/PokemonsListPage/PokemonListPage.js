@@ -10,7 +10,6 @@ const PokemonListPage = () => {
     const filteredPokemonList = () => pokemonList.filter(
         (pokemonInList) => !pokedex.find((pokemonInPokedex) => pokemonInList.name === pokemonInPokedex.name)
     );
-    console.log(pokemonList)
 
     return(
         <Box bg='gray' pb='305px' minH='675px' >

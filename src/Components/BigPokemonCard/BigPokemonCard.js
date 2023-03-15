@@ -1,12 +1,15 @@
-import { Box, Flex, Grid, GridItem, Image, Progress, Text } from "@chakra-ui/react"
+import { Flex, Grid, GridItem, Image, Progress, Text } from "@chakra-ui/react"
 import { cardColor } from "../../utils/cardColor"
 import pokeball from "../../assets/poke-shadow2.png"
 import { pokemonType } from "../../utils/pokemonTypes";
+import { progressBarColor } from "../../utils/progressBarColor";
 
 const BigPokemonCard = (props) => {
     const { pokemon } = props;
 
     let totalStats = 0
+
+    console.log(pokemon.moves.slice(0,5)[0].move.name)
 
     return(
         <Grid 
@@ -27,24 +30,35 @@ const BigPokemonCard = (props) => {
             </GridItem>
             <GridItem 
             colStart={2} colSpan={1} rowSpan={4} w='21.438rem' h='38.313rem' bg='white' borderRadius='0.75rem' display='grid' justifyItems='center' >
-                <GridItem w='19.18rem' h='16.063rem' pt='1.188rem' >
-                    <Text textStyle={'baseStats'} pb='1rem'>Base stats</Text>
+                <GridItem 
+                w='19.18rem' h='16.063rem' pt='1.188rem' >
+                    <Text 
+                    textStyle={'baseStats'} pb='1rem'>Base stats</Text>
                     {pokemon.stats.map((stat) => {
                         totalStats += stat.base_stat
                             return(
-                                <Grid key={stat.stat.name} column={3} h='1.66rem' borderTop='1px' borderTopColor='gray.100' alignItems='center'>
-                                    <GridItem pt='0.2rem' pr='1rem' display='grid' justifyItems='flex-end' alignItems='center' colStart={1} w='4rem' textStyle={'stat'} >{stat.stat.name === 'hp' ? stat.stat.name.toUpperCase() : stat.stat.name === 'special-attack'? 'Sp.Atks':  stat.stat.name === 'special-defense'? 'Sp.Def': stat.stat.name.charAt(0).toUpperCase() + stat.stat.name.slice(1)}</GridItem>
-                                    <GridItem colStart={2} w='2.39rem' textStyle={'stat'} color='black' fontWeight={'500'} >{stat.base_stat}</GridItem>
-                                    <GridItem colStart={3}>
-                                        <Progress w='12.5rem' borderRadius='0.2rem' variant={stat.base_stat > 50 ? 'yellow' : 'baseStyle'} value={stat.base_stat}/>
+                                <Grid 
+                                key={stat.stat.name} column={3} h='1.66rem' borderTop='1px' borderTopColor='gray.100' alignItems='center'>
+                                    <GridItem 
+                                    pt='0.2rem' pr='1rem' display='grid' justifyItems='flex-end' alignItems='center' colStart={1} w='4rem' textStyle={'stat'} >{stat.stat.name === 'hp' ? stat.stat.name.toUpperCase() : stat.stat.name === 'special-attack'? 'Sp.Atks':  stat.stat.name === 'special-defense'? 'Sp.Def': stat.stat.name.charAt(0).toUpperCase() + stat.stat.name.slice(1)}</GridItem>
+                                    <GridItem 
+                                    colStart={2} w='2.39rem' textStyle={'stat'} color='black' fontWeight={'500'} >{stat.base_stat}</GridItem>
+                                    <GridItem 
+                                    colStart={3}>
+                                        <Progress
+                                        w='12.5rem' borderRadius='0.2rem' variant={progressBarColor(stat.base_stat)} value={stat.base_stat}/>
                                     </GridItem>
                                 </Grid>
                                 )
                     })}
-                    <Grid column={3} h='1.66rem' borderTop='1px' borderTopColor='gray.100' borderBottom='1px' borderBottomColor='gray.100' alignItems='center'>
-                        <GridItem colStart={1} w='4.2rem' pr='1.16rem' display='grid' justifyItems='flex-end' alignItems='center' textStyle={'stat'}>Total</GridItem>
-                        <GridItem colStart={2}  w='2.59rem' textStyle={'stat'} color='black' fontWeight={'extrabold'} >{totalStats}</GridItem>
-                        <GridItem colStart={3} w='12.5rem'></GridItem>
+                    <Grid 
+                    column={3} h='1.66rem' borderTop='1px' borderTopColor='gray.100' borderBottom='1px' borderBottomColor='gray.100' alignItems='center'>
+                        <GridItem 
+                        colStart={1} w='4.2rem' pr='1.16rem' display='grid' justifyItems='flex-end' alignItems='center' textStyle={'stat'}>Total</GridItem>
+                        <GridItem 
+                        colStart={2}  w='2.59rem' textStyle={'stat'} color='black' fontWeight={'extrabold'} >{totalStats}</GridItem>
+                        <GridItem 
+                        colStart={3} w='12.5rem'></GridItem>
                     </Grid>
                 </GridItem>
             </GridItem>
@@ -63,8 +77,13 @@ const BigPokemonCard = (props) => {
             </GridItem>
             <GridItem 
             colStart={3} rowStart={2} rowSpan={3} ml='5rem' w='18.25rem' h='28.313rem' bg='white' borderRadius='0.5rem'>
-                <Text 
-                textStyle={'baseStats'}>Moves</Text>
+                <Text
+                pt='1.125rem' pl='1.125rem' textStyle={'baseStats'}>Moves</Text>
+                {pokemon.moves.slice(0,4).map((move)=> {
+                    return (
+                        <Text key={move.move.name} textStyle={'move'} bg='gray'>{move.move.name}</Text>
+                    )
+                })}
             </GridItem>
         </Grid>
     )

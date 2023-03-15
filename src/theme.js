@@ -181,6 +181,16 @@ const theme = extendTheme({
                         bg: '#FFDE69',
                     },
                 },
+                green: {
+                    filledTrack: {
+                        bg: '#8DC25B'
+                    },
+                },
+                blue: {
+                    filledTrack: {
+                        bg: '#48CAE4'
+                    },
+                },
             },
             defaultProps:{
                 size: 'sm'

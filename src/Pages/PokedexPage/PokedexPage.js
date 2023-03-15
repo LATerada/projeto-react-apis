@@ -5,7 +5,6 @@ import { GlobalContext } from "../../contexts/GlobalContext"
 
  const PokedexPage = () => {
     const { pokedex } = useContext(GlobalContext)
-    console.log(pokedex)
 
     return(
         <Box bg='gray' pb='305px' minH='675px' >
