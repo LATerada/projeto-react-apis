@@ -54,6 +54,7 @@ const theme = extendTheme({
             lineHeight: '1.063rem',
         }
     },
+
     components: {
         Button: {
           variants: {
@@ -163,6 +164,7 @@ const theme = extendTheme({
              },
           }
         },
+        
         Progress: {
             baseStyle: {
                 track: { bg: 'transparent'},
