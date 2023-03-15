@@ -23,7 +23,6 @@ const theme = extendTheme({
             color:'white',
 
             ml:'1.438rem',
-
         },
         h2: {
             fontFamily: 'Inter',
@@ -38,14 +37,15 @@ const theme = extendTheme({
         baseStats: {
             fontFamily: 'Inter',
             fontSize: '1.5rem',
-            fontWeight: 'bold',
+            fontWeight: '900',
             lineHeight: '1.063rem',
         },
         stat: {
             fontFamily: 'Inter',
-            fontSize: '1rem',
+            fontSize: '0.75rem',
             fontWeight: 'normal',
             lineHeight: '0.5rem',
+            color: 'gray.500'
         },
         move: {
             fontFamily: 'Montserrat',
@@ -163,6 +163,29 @@ const theme = extendTheme({
              },
           }
         },
+        Progress: {
+            baseStyle: {
+                track: { bg: 'transparent'},
+                filledTrack: {
+                    bg: '#ff7C2D'
+                }
+            },
+            sizes: {
+                sm: {
+                    h: '0.625rem',
+                },
+            },
+            variants: {
+                yellow: {
+                    filledTrack: {
+                        bg: '#FFDE69',
+                    },
+                },
+            },
+            defaultProps:{
+                size: 'sm'
+            },
+        }
       },
 })
 export default theme
