@@ -6,17 +6,17 @@ import {
     Text,
   } from '@chakra-ui/react'
 
-const DeletAlert = ({onOpen, isOpen, onClose} ) => {
+const DeletAlert = ({ isOpen, onClose} ) => {
     return(
-            <Modal isOpen={isOpen} onClose={onClose} isCentered>
-              <ModalOverlay />
-              <ModalContent w='28.188rem' h='13.875rem' pt='3.813rem' display='flex' alignItems='center' border-borderRadius='0.75rem'>
-                <Text textStyle={'caption'} color='black'>Oh, no!</Text>
-                <ModalBody>
-                  <Text textStyle={'modalText'} color='black'>O Pokémon foi removido da sua Pokebola</Text>
-                </ModalBody>
-              </ModalContent>
-            </Modal>
+      <Modal isOpen={isOpen} onClose={onClose} isCentered>
+        <ModalOverlay />
+        <ModalContent w='28.188rem' h='13.875rem' pt='3.813rem' display='flex' alignItems='center' border-borderRadius='0.75rem'>
+          <Text textStyle={'caption'} color='black'>Oh, no!</Text>
+          <ModalBody>
+            <Text textStyle={'modalText'} color='black'>O Pokémon foi removido da sua Pokebola</Text>
+          </ModalBody>
+        </ModalContent>
+      </Modal>
     )
 }
 

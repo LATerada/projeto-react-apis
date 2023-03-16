@@ -58,14 +58,14 @@ const PokemonCard = (props) => {
                        <Button variant={'captureCard'} onClick={catchPokemon}
                         >Capturar!</Button> 
                         <CaptureModal 
-                        isOpen={isOpen} onOpen={onOpen} onClose={onClose} />
+                        isOpen={isOpen} onClose={onClose} />
                     </>
                      
                     : ""}
                     {location.pathname === "/pokedex" ?<>
                         <Button variant={'deleteCard'} onClick={deletePokemon} >Excluir</Button>
                         <DeleteModal
-                        isOpen={isOpen} onOpen={onOpen} onClose={onClose} />
+                        isOpen={isOpen} onClose={onClose} />
                     </>
                     : ""}
 

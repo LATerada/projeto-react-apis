@@ -57,12 +57,12 @@ const Header = () => {
                         <>
                             <Button variant={'delete'} onClick={()=> fetchPokemon(name)} >Excluir da Pokedéx</Button> 
                             <DeleteModal
-                            isOpen={isOpen} onOpen={onOpen} onClose={onClose} />
+                            isOpen={isOpen} onClose={onClose} />
                         </>
                         : <>
                             <Button variant={'capturar'} onClick={() => fetchPokemon(name)} >Capturar!</Button> 
                             <CaptureModal 
-                            isOpen={isOpen} onOpen={onOpen} onClose={onClose} />
+                            isOpen={isOpen} onClose={onClose} />
                         </>
                     : ""}
                 </Grid> 
