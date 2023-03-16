@@ -1,5 +1,13 @@
 import { extendTheme } from "@chakra-ui/react";
 
+const breakpoints = {
+    sm: '320px',
+    md: '768px',
+    lg: '960px',
+    xl: '1200px',
+    '2xl': '1536px',
+  }
+
 const theme = extendTheme({
 
     color: {
@@ -9,14 +17,14 @@ const theme = extendTheme({
     textStyles: {
         caption: {
             fontFamily: 'Poppins',
-            fontSize: '3rem',
+            fontSize: { sm: '1rem', md: '1.5rem', lg: '2rem', xl: '2.6rem', '2xl': '3rem' },
             fontWeight: 'bold',
             lineHeight: '4.5rem',
             color:'white',
         },
         h1: {
             fontFamily: 'Inter',
-            fontSize: '2rem',
+            fontSize: { sm: '320px', md: '768px', lg: '1.5rem', xl: '1.8rem', '2xl': '2rem' },
             fontWeight: 'bold',
             lineHeight: '2.421rem',
             color:'white',
@@ -66,37 +74,37 @@ const theme = extendTheme({
           variants: {
             pokedex: {
                 fontFamily: 'Poppins',
-                fontSize: '1.5rem',
+                fontSize:{ sm: '0.5rem', md: '0.8rem', lg: '1.2rem', xl: '1.5rem', '2xl': '1.5rem' },
                 fontWeight: 'bold',
                 lineHeight: '2.25rem',
                 color:'white',
    
                 px: '0.25rem',
                 py: '0.625rem',
-                w:'18rem',
-                h:'4.625rem',
+                w:{ sm: '8rem', md: '12rem', lg: '13rem', xl: '16rem', '2xl': '18rem' },
+                h:{ sm: '2.5rem', md: '3rem', lg: '3.5rem', xl: '4rem', '2xl': '4.625rem' },
 
                 bg:'#33A4F5',
                 radius: 'lg'
              },
             pokemonList: {
                 fontFamily: 'Poppins',
-                fontSize: '1.5rem',
+                fontSize: { sm: '0.5rem', md: '0.8rem', lg: '1.2rem', xl: '1.5rem', '2xl': '1.5rem' },
                 fontWeight: 'bold',
                 lineHeight: '2.25rem',
                 textDecoration: 'underline'
              },
             delete: {
                 fontFamily: 'Poppins',
-                fontSize: '1rem',
+                fontSize: { sm: '0.4rem', md: '0.7rem', lg: '0.8rem', xl: '1rem', '2xl': '1rem' },
                 fontWeight: 'normal',
                 lineHeight: '1.5rem',
                 color:'white',
 
                 px: '0.25rem',
                 py: '0.625rem',
-                w:'14.125rem',
-                h:'3.563rem',
+                w:{ sm: '6rem', md: '8rem', lg: '10rem', xl: '12rem', '2xl': '14.125rem' },
+                h:{ sm: '2rem', md: '2.5rem', lg: '3rem', xl: '3rem', '2xl': '3.563rem' },
 
                 bg: '#FF6262',
                 radius: 'lg'
@@ -118,7 +126,7 @@ const theme = extendTheme({
              },
             details: {
                 fontFamily: 'Poppins',
-                fontSize: '1rem',
+                fontSize: { sm: '0.4rem', md: '0.7rem', lg: '0.8rem', xl: '1rem', '2xl': '1rem' },
                 fontWeight: 'bold',
                 lineHeight: '1.5rem',
                 textDecoration: 'underline',
@@ -129,18 +137,18 @@ const theme = extendTheme({
                 left:'1.438rem',
                 bottom:'1.25rem', 
 
-                w:'4.625rem',
+                w:{ sm: '2.5rem', md: '3rem', lg: '3.5rem', xl: '4rem', '2xl': '4.625rem' },
                 h:'1.5rem',
              },
             captureCard: {
                 fontFamily: 'Poppins',
-                fontSize: '1rem',
+                fontSize: { sm: '0.4rem', md: '0.7rem', lg: '0.8rem', xl: '1rem', '2xl': '1rem' },
                 fontWeight: 'normal',
                 lineHeight: '1.5rem',
 
                 px: '0.25rem',
                 py: '0.625rem',
-                w:'9.125rem',
+                w: { sm: '3rem', md: '5rem', lg: '7rem', xl: '8.5rem', '2xl': '9.125rem' },
                 h:'2.375rem',
 
                 position:'absolute',
@@ -151,7 +159,7 @@ const theme = extendTheme({
             },
             deleteCard: {
                 fontFamily: 'Poppins',
-                fontSize: '1rem',
+                fontSize: { sm: '0.4rem', md: '0.7rem', lg: '0.8rem', xl: '1rem', '2xl': '1rem' },
                 fontWeight: 'normal',
                 lineHeight: '1.5rem',
                 color:'white',
@@ -205,5 +213,6 @@ const theme = extendTheme({
             },
         }
       },
+    breakpoints
 })
 export default theme

@@ -44,7 +44,7 @@ const Header = () => {
     return(
         <>
             {isLoaded ? 
-                <Grid h='10rem' w='full' templateColumns='repeat(3, 1fr)' justifyItems='center' alignItems='center' gap={12}>
+                <Grid h='10rem' w='100vw' templateColumns='repeat(3, 1fr)' justifyItems='center' alignItems='center' gap={12}>
                     {location.pathname === "/pokedex" || location.pathname === `/detail/${name}` ? 
                         <Button variant={'pokemonList'} onClick={()=> goToPokemonListPage(navigate)} > <ChevronLeftIcon></ChevronLeftIcon>Todos Pokémons</Button> 
                     : " "}
