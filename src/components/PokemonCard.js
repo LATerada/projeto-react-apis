@@ -1,7 +1,7 @@
 import { useContext } from "react";
 import { useLocation, useNavigate } from "react-router-dom";
 import { GlobalContext } from "../contexts/GlobalContext";
-import { goToDetailPage } from "../router/coordinator";
+import { goToDetailsPage } from "../router/coordinator";
 import { useRequestData } from "../hooks/useRequesData";
 import { cardColor } from "../utils/cardColor";
 import { pokemonType } from "../utils/pokemonTypes";
@@ -61,7 +61,7 @@ const PokemonCard = (props) => {
                                                     zIndex={2} h={{ base: '1.2rem', lg: '1.5rem', xl: '1.7rem', '2xl': '1.931rem' }} src={pokemonType(pokemon.types[1].type.name)}/> : ""}
                     </Flex>
                     <Button 
-                    variant={'details'} onClick={() => goToDetailPage(navigate, props.pokemon.name)} >Detalhes</Button>
+                    variant={'details'} onClick={() => goToDetailsPage(navigate, props.pokemon.name)} >Detalhes</Button>
                     {location.pathname === "/" ?
                     <>
                        <Button 

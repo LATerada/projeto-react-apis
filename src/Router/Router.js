@@ -2,7 +2,7 @@ import { BrowserRouter, Routes, Route } from "react-router-dom"
 import Header from "../components/Header"
 import PokemonListPage from "../pages/PokemonListPage"
 import PokedexPage from "../pages/PokedexPage"
-import PokemonDetailPage from "../pages/PokemonDetailPage"
+import PokemonDetailsPage from "../pages/PokemonDetailsPage"
 
 export const Router = () => {
     return(
@@ -16,7 +16,7 @@ export const Router = () => {
                     path="/pokedex" element={ <PokedexPage/> }>
                 </Route>
                 <Route 
-                    path="/detail/:id" element={ <PokemonDetailPage/> }>
+                    path="/details/:id" element={ <PokemonDetailsPage/> }>
                 </Route>
             </Routes>
         </BrowserRouter>

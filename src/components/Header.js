@@ -16,7 +16,8 @@ const Header = () => {
     const { pokedex,  pokemonList, isLoaded, addPokemonToPokedex, deletePokemonFromPokedex } = useContext(GlobalContext)
     const navigate = useNavigate();
     const location = useLocation();
-    const name = location.pathname.slice(8)
+    const name = location.pathname.slice(9)
+    console.log(name)
 
     const { isOpen, onOpen, onClose } = useDisclosure()
 
@@ -44,23 +45,34 @@ const Header = () => {
     return(
         <>
             {isLoaded ? 
-                <Grid h='10rem' w='100vw' templateColumns='repeat(3, 1fr)' justifyItems='center' alignItems='center' gap={12}>
-                    {location.pathname === "/pokedex" || location.pathname === `/detail/${name}` ? 
-                        <Button variant={'pokemonList'} onClick={()=> goToPokemonListPage(navigate)} > <ChevronLeftIcon></ChevronLeftIcon>Todos Pokémons</Button> 
+                <Grid h={{base:'15rem', md:'10rem'}} w='100vw' templateColumns={{ base:'repeat(2,1fr)', md:'repeat(3, 1fr)'}} templateRows={{ base:'(8rem,2rem)', md:'1' }} justifyItems='center' alignItems='center' gap={{ md:'12'}}>
+                    <GridItem 
+                    colStart={{ base:'1',md:'2'}} colSpan={{ base:'2'}} p={{ base:'2rem' }}><img src={logo} alt="Pokemon"></img></GridItem>
+                    {location.pathname === "/pokedex" || location.pathname === `/details/${name}` ? 
+                        <GridItem
+                        colStart={{ base:'1', md:'1'}} rowStart={{base:'2'}}>
+                            <Button 
+                             variant={'pokemonList'} onClick={()=> goToPokemonListPage(navigate)} > <ChevronLeftIcon></ChevronLeftIcon>Todos Pokémons</Button> 
+                        </GridItem>
                     : " "}
-                    <GridItem colStart={2}><img src={logo} alt="Pokemon"></img></GridItem>
                     {location.pathname === "/" ? 
-                        <Button variant={'pokedex'} onClick={() => goToPokedexPage(navigate)} >Pokedéx</Button> 
+                        <GridItem
+                        colStart={{ base:'1', md:'3'}} colSpan={{ base:'2'}}>
+                        <Button 
+                        variant={'pokedex'} onClick={() => goToPokedexPage(navigate)} >Pokedéx</Button> 
+                    </GridItem>
                     : "" }
-                    {location.pathname === `/detail/${name}` ?
+                    {location.pathname === `/details/${name}` ?
                         (pokedex.find((pokemonInPokedex) => pokemonInPokedex["name"] === name)) ? 
                         <>
-                            <Button variant={'delete'} onClick={()=> fetchPokemon(name)} >Excluir da Pokedéx</Button> 
+                            <Button 
+                            colStart={{ md:'3'}} variant={'delete'} onClick={()=> fetchPokemon(name)} >Excluir da Pokedéx</Button> 
                             <DeleteModal
                             isOpen={isOpen} onClose={onClose} />
                         </>
                         : <>
-                            <Button variant={'capturar'} onClick={() => fetchPokemon(name)} >Capturar!</Button> 
+                            <Button 
+                            colStart={{ md:'3'}} variant={'capturar'} onClick={() => fetchPokemon(name)} >Capturar!</Button> 
                             <CaptureModal 
                             isOpen={isOpen} onClose={onClose} />
                         </>

@@ -7,7 +7,7 @@ import {
     Image, 
     Text } from "@chakra-ui/react"
 
-const PokemonDetailPage = () => {
+const PokemonDetailsPage = () => {
     const { id } = useParams()
     const [ pokemon, isLoading, isLoaded, error ] = useRequestData({}, `/${id}`)
 
@@ -25,4 +25,4 @@ const PokemonDetailPage = () => {
     )
 }
 
-export default PokemonDetailPage
+export default PokemonDetailsPage
