@@ -1,14 +1,20 @@
-import { useLocation, useNavigate } from "react-router-dom";
-import { goToDetailPage } from "../router/coordinator";
 import { useContext } from "react";
+import { useLocation, useNavigate } from "react-router-dom";
 import { GlobalContext } from "../contexts/GlobalContext";
+import { goToDetailPage } from "../router/coordinator";
 import { useRequestData } from "../hooks/useRequesData";
-import { Box, Button, Flex, Image, Text, useDisclosure } from "@chakra-ui/react";
 import { cardColor } from "../utils/cardColor";
-import pokeball from '../assets/poke-shadow.png'
 import { pokemonType } from "../utils/pokemonTypes";
-import DeletAlert from "./DeleteAlert";
-import CaptureAlert from "./CapteureAlert";
+import DeleteModal from "./DeleteModal";
+import CaptureModal from "./CaptureModal";
+import pokeball from '../assets/poke-shadow.png'
+import { 
+    Box, 
+    Button, 
+    Flex, 
+    Image, 
+    Text, 
+    useDisclosure} from "@chakra-ui/react";
 
 const PokemonCard = (props) => {
     const { addPokemonToPokedex, deletePokemonFromPokedex } = useContext(GlobalContext)
@@ -18,8 +24,20 @@ const PokemonCard = (props) => {
     const [ pokemon, isLoading, isLoaded, error ] = useRequestData({}, `/${props.pokemon.name}`)
 
     const { isOpen, onOpen, onClose } = useDisclosure()
-    const chamarModal = () => {
-        
+
+    const catchPokemon = () => {
+        onOpen()
+        setTimeout(() => {
+            onClose()
+            addPokemonToPokedex(props.pokemon)
+        },700 )
+    }
+    const deletePokemon = () => {
+        onOpen()
+        setTimeout(() => {
+            onClose()
+            deletePokemonFromPokedex(props.pokemon)
+        },700 )
     }
     
     return(
@@ -27,8 +45,6 @@ const PokemonCard = (props) => {
           {isLoaded ?  
                 <Box position='relative' w='27.5rem' h='13.125rem' bg={cardColor(pokemon.types[0].type.name)} borderRadius='0.75rem'>
                     <Text textStyle={'h2'}>{pokemon.id < 10 ? `#0${pokemon.id}`: `#${pokemon.id}`}</Text>
-                    <DeletAlert></DeletAlert>
-                    <CaptureAlert></CaptureAlert>
                     <Text textStyle={'h1'} >{pokemon.name.charAt(0).toUpperCase() + pokemon.name.slice(1)}</Text>
                     <Image zIndex='1' position='absolute' right='0.688rem' top='-3.313rem' width='200px' src={pokemon.sprites.other["official-artwork"].front_default} alt="Imagem do Pokemon"/>
                     <Image position='absolute' right='0' top='0' src={pokeball} />
@@ -38,11 +54,21 @@ const PokemonCard = (props) => {
                     </Flex>
                     <Button variant={'details'} onClick={() => goToDetailPage(navigate, props.pokemon.name)} >Detalhes</Button>
                     {location.pathname === "/" ?
-                        <Button variant={'captureCard'} onClick={() => addPokemonToPokedex(props.pokemon)}>Capturar!</Button> 
+                    <>
+                       <Button variant={'captureCard'} onClick={catchPokemon}
+                        >Capturar!</Button> 
+                        <CaptureModal 
+                        isOpen={isOpen} onOpen={onOpen} onClose={onClose} />
+                    </>
+                     
                     : ""}
-                    {location.pathname === "/pokedex" ?
-                        <Button variant={'deleteCard'} onClick={()=> deletePokemonFromPokedex(props.pokemon)} >Excluir</Button>
+                    {location.pathname === "/pokedex" ?<>
+                        <Button variant={'deleteCard'} onClick={deletePokemon} >Excluir</Button>
+                        <DeleteModal
+                        isOpen={isOpen} onOpen={onOpen} onClose={onClose} />
+                    </>
                     : ""}
+
                 </Box>
             : ""}
         </>

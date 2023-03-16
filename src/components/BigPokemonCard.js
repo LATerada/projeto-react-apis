@@ -1,8 +1,14 @@
-import { Flex, Grid, GridItem, Image, Progress, Text } from "@chakra-ui/react"
 import { cardColor } from "../utils/cardColor"
-import pokeball from "../assets/poke-shadow2.png"
 import { pokemonType } from "../utils/pokemonTypes";
 import { progressBarColor } from "../utils/progressBarColor";
+import pokeball from "../assets/poke-shadow2.png"
+import { 
+    Flex, 
+    Grid, 
+    GridItem, 
+    Image, 
+    Progress, 
+    Text } from "@chakra-ui/react"
 
 const BigPokemonCard = (props) => {
     const { pokemon } = props;
@@ -85,7 +91,7 @@ const BigPokemonCard = (props) => {
             </GridItem>
         </Grid>
     )
-
 }
+
 export default BigPokemonCard
 

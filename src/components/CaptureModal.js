@@ -3,16 +3,11 @@ import {
     ModalOverlay,
     ModalContent,
     ModalBody,
-    Button,
-    useDisclosure,
     Text,
   } from '@chakra-ui/react'
 
-const CaptureAlert = () => {
-    const { isOpen, onOpen, onClose } = useDisclosure()
+const CaptureAlert = ({ isOpen, onOpen, onClose }) => {
     return(
-        <>
-            <Button onClick={onOpen}>Open Modal</Button>
             <Modal isOpen={isOpen} onClose={onClose} isCentered>
               <ModalOverlay />
               <ModalContent w='28.188rem' h='13.875rem' pt='3.813rem' display='flex' alignItems='center' border-borderRadius='0.75rem'>
@@ -22,8 +17,7 @@ const CaptureAlert = () => {
                 </ModalBody>
               </ModalContent>
             </Modal>
-        </>
-       
     )
 }
+
 export default CaptureAlert

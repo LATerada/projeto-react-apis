@@ -1,10 +1,16 @@
+import { useContext } from "react";
 import { useNavigate, useLocation } from "react-router-dom";
-import { goToPokedexPage, goToPokemonListPage } from "../router/coordinator";
-import { useContext, useEffect } from "react";
 import { GlobalContext } from "../contexts/GlobalContext";
+import { goToPokedexPage, goToPokemonListPage } from "../router/coordinator";
 import logo from "../assets/logo.png"
-import { Button, Grid, GridItem } from "@chakra-ui/react";
 import { ChevronLeftIcon } from "@chakra-ui/icons"
+import { 
+    Button, 
+    Grid, 
+    GridItem, 
+    useDisclosure} from "@chakra-ui/react";
+import DeleteModal from "./DeleteModal";
+import CaptureModal from "./CaptureModal";
 
 const Header = () => {
     const { pokedex,  pokemonList, isLoaded, addPokemonToPokedex, deletePokemonFromPokedex } = useContext(GlobalContext)
@@ -12,20 +18,28 @@ const Header = () => {
     const location = useLocation();
     const name = location.pathname.slice(8)
 
+    const { isOpen, onOpen, onClose } = useDisclosure()
+
     const fetchPokemon = (pathnamedPokemon) => {
         const pokemonFromPokedex = pokedex.find((pokemonInPokedex) => pokemonInPokedex["name"] === pathnamedPokemon)
 
         if(pokemonFromPokedex){
-            return pokemonFromPokedex
+            onOpen()
+            setTimeout(() => {
+                onClose()
+                deletePokemonFromPokedex(pokemonFromPokedex)
+            },700 )
+            return
         }else if(!pokemonFromPokedex){
             const pokemonFromPokelist = pokemonList.find((pokemonInPokelist) => pokemonInPokelist["name"] === pathnamedPokemon)
-            return pokemonFromPokelist
+            onOpen()
+            setTimeout(() => {
+                onClose()
+                addPokemonToPokedex(pokemonFromPokelist)
+            },700 )
+            return
         }
     }
-    
-    // useEffect(() => {
-    //     // console.log({pokedex, name})
-    // },[pokedex,name])
 
     return(
         <>
@@ -40,12 +54,19 @@ const Header = () => {
                     : "" }
                     {location.pathname === `/detail/${name}` ?
                         (pokedex.find((pokemonInPokedex) => pokemonInPokedex["name"] === name)) ? 
-                            <Button variant={'delete'} onClick={() => deletePokemonFromPokedex(fetchPokemon(name))} >Excluir da Pokedéx</Button> 
-                        : <Button variant={'capturar'} onClick={() => addPokemonToPokedex(fetchPokemon(name))} >Capturar!</Button> 
+                        <>
+                            <Button variant={'delete'} onClick={()=> fetchPokemon(name)} >Excluir da Pokedéx</Button> 
+                            <DeleteModal
+                            isOpen={isOpen} onOpen={onOpen} onClose={onClose} />
+                        </>
+                        : <>
+                            <Button variant={'capturar'} onClick={() => fetchPokemon(name)} >Capturar!</Button> 
+                            <CaptureModal 
+                            isOpen={isOpen} onOpen={onOpen} onClose={onClose} />
+                        </>
                     : ""}
                 </Grid> 
             : ""}
-       
         </>
     )
 }

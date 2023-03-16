@@ -16,7 +16,6 @@ const GlobalContextProvider = ({children}) => {
             const newPokedex = [...pokedex, clickedPokemon]
             setPokedex(newPokedex)
         }
-        alert(`Gotcha!`)
     }
     
     const deletePokemonFromPokedex = (clickedPokemon) => {
@@ -26,9 +25,11 @@ const GlobalContextProvider = ({children}) => {
     }
 
     return(
-        <GlobalContext.Provider value={{ pokedex, pokemonList, isLoading, isLoaded, error, addPokemonToPokedex, deletePokemonFromPokedex }}>
+        <GlobalContext.Provider 
+        value={{ pokedex, pokemonList, isLoading, isLoaded, error, addPokemonToPokedex, deletePokemonFromPokedex }}>
             {children}
         </GlobalContext.Provider>
     )
 }
+
 export default GlobalContextProvider;

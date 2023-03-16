@@ -12,9 +12,12 @@ const PokemonListPage = () => {
     );
 
     return(
-        <Box bg='gray' pb='305px' minH='675px' >
-            <Text pt='60px' pb='55px' pl='40px' textStyle='caption'>Todos Pokémons</Text>
-                <Grid px='40px' templateColumns='repeat(3, 1fr)' justifyItems='center' rowGap='16'>
+        <Box 
+        bg='gray' pb='19.063rem' minH='90vh' >
+            <Text 
+            pt='3.75rem' pb='3.438rem' pl='2.5rem' textStyle='caption'>Todos Pokémons</Text>
+                <Grid 
+                px='2.5rem' templateColumns='repeat(3, 1fr)' justifyItems='center' rowGap='16'>
                     {error ? <p>ERRO!</p> : ""}
                     {isLoading ? <p>carregando...</p> : ""}
                     {isLoaded ? filteredPokemonList().map((pokemon) => {
