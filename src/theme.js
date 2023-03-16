@@ -24,22 +24,22 @@ const theme = extendTheme({
         },
         h1: {
             fontFamily: 'Inter',
-            fontSize: { sm: '320px', md: '768px', lg: '1.5rem', xl: '1.8rem', '2xl': '2rem' },
+            fontSize: { sm: '0.8rem', md: '1.3rem', lg: '1.5rem', xl: '1.8rem', '2xl': '2rem' },
             fontWeight: 'bold',
-            lineHeight: '2.421rem',
+            lineHeight: {md:'1.5rem',lg:'2.421rem'},
             color:'white',
 
-            ml:'1.438rem',
+            ml:{md:'1rem', lg:'1.438rem'},
         },
         h2: {
             fontFamily: 'Inter',
-            fontSize: '1rem',
+            fontSize: { md:'0.6rem',lg: '0.8rem', xl: '0.8rem', '2xl': '1rem' },
             fontWeight: 'bold',
             lineHeight: '1.21rem',
             color:'white',
 
-            ml:'1.438rem',
-            mt:'1.563rem'
+            ml:{md:'1rem', lg:'1.438rem'},
+            mt:{md:'1rem', lg:'1.563rem'}
         },
         baseStats: {
             fontFamily: 'Inter',
@@ -74,7 +74,7 @@ const theme = extendTheme({
           variants: {
             pokedex: {
                 fontFamily: 'Poppins',
-                fontSize:{ sm: '0.5rem', md: '0.8rem', lg: '1.2rem', xl: '1.5rem', '2xl': '1.5rem' },
+                fontSize:{ sm: '0.8rem', md: '1rem', lg: '1.2rem', xl: '1.5rem', '2xl': '1.5rem' },
                 fontWeight: 'bold',
                 lineHeight: '2.25rem',
                 color:'white',
@@ -117,8 +117,8 @@ const theme = extendTheme({
 
                 px: '0.25rem',
                 py: '0.625rem',
-                w:'14.125rem',
-                h:'3.563rem',
+                w:{ sm: '7rem', md: '8rem', lg: '10rem', xl: '12rem', '2xl': '14.125rem' },
+                h:{ sm: '1.5rem', md: '2rem', lg: '2.5rem', xl: '3rem', '2xl': '3.563rem' },
 
                 border:'2px',
                 borderColor:'black',
@@ -148,12 +148,12 @@ const theme = extendTheme({
 
                 px: '0.25rem',
                 py: '0.625rem',
-                w: { sm: '3rem', md: '5rem', lg: '7rem', xl: '8.5rem', '2xl': '9.125rem' },
-                h:'2.375rem',
+                w: { sm: '5.5rem', md: '6.5rem', lg: '7.5rem', xl: '8.5rem', '2xl': '9.125rem' },
+                h: { sm: '1.4rem', md: '1.6rem', lg: '1.8rem', xl: '2rem', '2xl': '2.375rem' },
 
                 position:'absolute',
                 right:'1.375rem',
-                bottom: '0.813rem',
+                bottom: {md:'1.3rem',lg:'0.813rem'},
 
                 bg:'white'
             },
@@ -166,12 +166,12 @@ const theme = extendTheme({
 
                 px: '0.25rem',
                 py: '0.625rem',
-                w:'9.125rem',
-                h:'2.375rem',
+                w: { sm: '5rem', md: '6rem', lg: '7rem', xl: '8.5rem', '2xl': '9.125rem' },
+                h: { sm: '1.3rem', md: '1.5rem', lg: '1.8rem', xl: '2rem', '2xl': '2.375rem' },
 
                 position:'absolute',
                 right:'1.375rem',
-                bottom: '0.813rem',
+                bottom:{md:'1rem',lg:'0.813rem'} ,
 
                 bg: '#FF6262',
                 radius: 'lg'

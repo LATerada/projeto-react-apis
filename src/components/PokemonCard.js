@@ -39,16 +39,16 @@ const PokemonCard = (props) => {
             deletePokemonFromPokedex(props.pokemon)
         },700 )
     }
-    // w='27.5rem'
+
     return(
         <>
           {isLoaded ?  
-                <Box position='relative' w={{ sm: '320px', md: '768px', lg: '18rem', xl: '23rem', '2xl': '27.5rem' }} h={{ sm: '320px', md: '768px', lg: '11rem', xl: '12rem', '2xl': '13.125rem' }} bg={cardColor(pokemon.types[0].type.name)} borderRadius='0.75rem'>
-                    <Text textStyle={'h2'}>{pokemon.id < 10 ? `#0${pokemon.id}`: `#${pokemon.id}`}</Text>
+                <Box position='relative' w={{ sm: '8rem', md: '15rem', lg: '18rem', xl: '23rem', '2xl': '27.5rem' }} h={{ sm: '9rem', md: '10rem', lg: '11rem', xl: '12rem', '2xl': '13.125rem' }} bg={cardColor(pokemon.types[0].type.name)} borderRadius='0.75rem'>
+                    <Image zIndex={1} position='absolute' right={{ md:'-0.612rem', lg:'-0.312rem' , xl: '0.688rem'}} top='-3.313rem' width={{ sm: '7rem', md: '8rem', lg: '9rem', xl: '10rem', '2xl': '12.5rem' }} src={pokemon.sprites.other["official-artwork"].front_default} alt="Imagem do Pokemon"/>
+                    <Image position='absolute' right='0' top='0'  width={{ sm: '7rem', md: '9rem', lg: '11rem', xl: '13rem', '2xl': '16rem' }} src={pokeball} />
+                    <Text zIndex={2} textStyle={'h2'}>{pokemon.id < 10 ? `#0${pokemon.id}`: `#${pokemon.id}`}</Text>
                     <Text textStyle={'h1'} >{pokemon.name.charAt(0).toUpperCase() + pokemon.name.slice(1)}</Text>
-                    <Image zIndex='1' position='absolute' right={{lg:'-0.312rem' , xl: '0.688rem'}} top='-3.313rem' width={{ sm: '320px', md: '768px', lg: '9rem', xl: '10rem', '2xl': '12.5rem' }} src={pokemon.sprites.other["official-artwork"].front_default} alt="Imagem do Pokemon"/>
-                    <Image position='absolute' right='0' top='0'  width={{ sm: '320px', md: '768px', lg: '11rem', xl: '13rem', '2xl': '16rem' }} src={pokeball} />
-                    <Flex pl='1.438rem' pt='0.625rem' columnGap='0.438rem'>
+                    <Flex pl={{md:'1rem',lg:'1.2rem', xl:'1.438rem'}} pt={{md:'0.4rem', lg:'0.625rem'}} columnGap='0.438rem'>
                         <Image zIndex={2} h={{ sm: '1rem', md: '1.2rem', lg: '1.5rem', xl: '1.7rem', '2xl': '1.931rem' }} src={pokemonType(pokemon.types[0].type.name)} />
                         {pokemon.types.length > 1 ?  <Image zIndex={2} h={{ sm: '1rem', md: '1.2rem', lg: '1.5rem', xl: '1.7rem', '2xl': '1.931rem' }} src={pokemonType(pokemon.types[1].type.name)}/> : ""}
                     </Flex>
