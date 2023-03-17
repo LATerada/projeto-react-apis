@@ -33,12 +33,13 @@ const theme = extendTheme({
         },
         h1Details: {
             fontFamily: 'Inter',
-            fontSize: { base: '1.3rem', lg: '2.2rem', xl: '1.8rem', '2xl': '2rem' },
+            fontSize: { base: '1.3rem',md:'2rem', lg: '2.2rem', xl: '1.8rem', '2xl': '2rem' },
             fontWeight: 'bold',
             lineHeight: { base:'1.5rem',lg:'2.421rem'},
             color:'white',
 
             ml:{ base:'1rem', lg:'1.438rem'},
+            mt:{ md:'1rem', lg:'0'}
         },
         h2: {
             fontFamily: 'Inter',
@@ -52,7 +53,7 @@ const theme = extendTheme({
         },
         h2Details: {
             fontFamily: 'Inter',
-            fontSize: { lg: '1.2rem', xl: '0.8rem', '2xl': '1rem' },
+            fontSize: { md:'1.5rem', lg: '1.2rem', xl: '0.8rem', '2xl': '1rem' },
             fontWeight: 'bold',
             lineHeight: '1.21rem',
             color:'white',
