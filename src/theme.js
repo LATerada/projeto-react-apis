@@ -2,6 +2,7 @@ import { extendTheme } from "@chakra-ui/react";
 
 const breakpoints = {
     sm: '320px',
+    smd:'530px',
     md: '768px',
     lg: '960px',
     xl: '1200px',
@@ -63,20 +64,20 @@ const theme = extendTheme({
         },
         baseStats: {
             fontFamily: 'Inter',
-            fontSize: '1.5rem',
+            fontSize: {sm:'1rem',md:'1.5rem'},
             fontWeight: '900',
             lineHeight: '1.063rem',
         },
         stat: {
             fontFamily: 'Inter',
-            fontSize: '0.75rem',
+            fontSize: {sm:'0.7rem', md:'0.75rem'},
             fontWeight: 'normal',
             lineHeight: '0.5rem',
             color: 'gray.500'
         },
         move: {
             fontFamily: 'Montserrat',
-            fontSize: '0.875rem',
+            fontSize: { sm:'0.7rem',md:'0.875rem'},
             fontWeight: 'normal',
             lineHeight: '1.063rem',
         },

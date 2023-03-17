@@ -13,9 +13,9 @@ const PokemonDetailsPage = () => {
 
     return(
         <Flex 
-        position='relative' px='1.563rem' bg='gray' pb={{md:'5.25rem'}} minH={{md:'60vh',xl:'90vh'}} wrap='wrap' justifyContent='center' alignItems='flex-start'>
+        position='relative' px='1.563rem' bg='gray' pb={{sm:'5.25rem'}} minH={{sm:'75vh',md:'60vh',xl:'90vh'}} wrap='wrap' justifyContent='center' alignItems='flex-start'>
             <Text 
-            w='full'  pt={{ base: '1.5rem', md:'2.5rem', xl: '3rem', '2xl': '3.75rem' }} pb={{ base: '1.5rem', md: '3rem', '2xl': '3.438rem' }}  pl={{ base:'1.5rem',md:'2.5rem'}} textStyle='caption'>Detalhes</Text>
+            w='full'  pt={{ base: '2rem', md:'2.5rem', xl: '3rem', '2xl': '3.75rem' }} pb={{ base: '2rem', md: '3rem', '2xl': '3.438rem' }}  pl={{ base:'1.5rem',md:'2.5rem'}} textStyle='caption'>Detalhes</Text>
             <Image 
             position='absolute' top='-7rem' w={{md:'52rem',xl:'50rem', '2xl':'56.813rem'}} src={pokeball}/>
             {isLoading? <p>...carregando...</p> : ""}
