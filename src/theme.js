@@ -19,7 +19,7 @@ const theme = extendTheme({
             fontFamily: 'Poppins',
             fontSize: { base: '1.1rem', md: '1.5rem', lg: '2rem', xl: '2.6rem', '2xl': '3rem' },
             fontWeight: 'bold',
-            lineHeight: '4.5rem',
+            lineHeight: { xl:'4.5rem'},
             color:'white',
         },
         h1: {
@@ -31,9 +31,28 @@ const theme = extendTheme({
 
             ml:{ base:'1rem', lg:'1.438rem'},
         },
+        h1Details: {
+            fontFamily: 'Inter',
+            fontSize: { base: '1.3rem', lg: '2.2rem', xl: '1.8rem', '2xl': '2rem' },
+            fontWeight: 'bold',
+            lineHeight: { base:'1.5rem',lg:'2.421rem'},
+            color:'white',
+
+            ml:{ base:'1rem', lg:'1.438rem'},
+        },
         h2: {
             fontFamily: 'Inter',
             fontSize: { base: '0.8rem', xl: '0.8rem', '2xl': '1rem' },
+            fontWeight: 'bold',
+            lineHeight: '1.21rem',
+            color:'white',
+
+            ml:{ base:'1rem', lg:'1.438rem'},
+            mt:{ base:'1rem', lg:'1.563rem'}
+        },
+        h2Details: {
+            fontFamily: 'Inter',
+            fontSize: { lg: '1.2rem', xl: '0.8rem', '2xl': '1rem' },
             fontWeight: 'bold',
             lineHeight: '1.21rem',
             color:'white',
