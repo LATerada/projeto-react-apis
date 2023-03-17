@@ -69,7 +69,7 @@ const BigPokemonCard = (props) => {
           "2xl": "-8rem",
         }}
         right={{ sm: "0rem", smd: "0.8rem", md: "2.196rem" }}
-        w={{ sm: "11rem", smd: "13rem", md: "20rem", lg: "16.875rem" }}
+        w={{ sm: "12rem", smd: "13rem", md: "20rem", lg: "16.875rem" }}
         src={props.pokemon.sprites.other["official-artwork"].front_default}
         alt="Imagem do Pokemon"
       />
