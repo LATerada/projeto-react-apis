@@ -17,8 +17,9 @@ const DeletAlert = ({ isOpen, onClose }) => {
         display="flex"
         alignItems="center"
         borderRadius="0.75rem"
+        textAlign="center"
       >
-        <Text textStyle={"caption"} color="black">
+        <Text textStyle={"modalTitle"} color="black">
           Oh, no!
         </Text>
         <ModalBody>
