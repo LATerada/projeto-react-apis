@@ -11,7 +11,6 @@ O Projeto Pokédex é um site de pokémons que possui três páginas: Home, Poke
 - <a href="#rodar">Como rodar este projeto?</a>
 - <a href="#tecnologias">Tecnologias Utilizadas</a>
 - <a href="#autoras">Pessoa Autora</a>
-- <a href="#passos">Próximos passos</a>
 
 ## 📱 Funcionalidades do Projeto
 
@@ -27,12 +26,24 @@ O Projeto Pokédex é um site de pokémons que possui três páginas: Home, Poke
 
 ## 💿 Demonstraçāo
 
-[Link demonstraçāo]()
+[Link demonstraçāo](https://labenu-lat-pokedex.surge.sh)
 
 ## 📝 Como rodar este projeto?
 
-```
+```bash
+# Clone este repositório
+$ git clone linkrepo
 
+# Acesse a pasta do projeto no seu terminal
+$ cd projeto-react-apis
+
+# Instale as dependências
+$ npm install
+
+# Execute a aplicaçāo
+$ npm run start
+
+# A aplicaçāo será iniciada na porta 3000, acesse pelo navegador: http://localhost:3000
 ```
 
 ## 📚 Tecnologias utilizadas
@@ -46,5 +57,3 @@ O Projeto Pokédex é um site de pokémons que possui três páginas: Home, Poke
 ## 🙋‍♀️ Pessoa Autora
 
 [Linkedin](https://www.linkedin.com/in/larissa-terada/)
-
-## Próximos passos
