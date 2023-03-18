@@ -1,11 +1,11 @@
 export const goToPokemonListPage = (navigate) => {
-    navigate("/")
-}
+  navigate("/");
+};
 
 export const goToPokedexPage = (navigate) => {
-    navigate("/pokedex")
-}
+  navigate("/pokedex");
+};
 
-export const goToDetailPage = (navigate, id) => {
-    navigate(`/detail/${id}`)
-}
+export const goToDetailsPage = (navigate, id) => {
+  navigate(`/details/${id}`);
+};
