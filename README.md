@@ -26,7 +26,7 @@ O Projeto Pokédex é um site de pokémons que possui três páginas: Home, Poke
 
 ## 💿 Demonstraçāo
 
-[Link demonstraçāo](https://labenu-lat-pokedex.surge.sh)
+[Link demonstraçāo](https://labenu-pokedex-lat.surge.sh)
 
 ## 📝 Como rodar este projeto?
 
