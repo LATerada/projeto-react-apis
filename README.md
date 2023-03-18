@@ -1,4 +1,4 @@
-# Projeto React,APIs e ChakraUI - Pokédex
+# Projeto React, APIs e ChakraUI - Pokédex
 
 ![Corte da página de detalhe](./src/assets/details.lg.cut.png)
 O Projeto Pokédex é um site de pokémons que possui três páginas: Home, Pokedex e Detalhes.
