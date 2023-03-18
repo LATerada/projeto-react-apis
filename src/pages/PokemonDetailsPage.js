@@ -14,7 +14,7 @@ const PokemonDetailsPage = () => {
       px="1.563rem"
       bg="gray"
       pb={{ sm: "5.25rem" }}
-      minH={{ sm: "75vh", md: "60vh", xl: "90vh" }}
+      minH={{ sm: "90vh", md: "90vh", xl: "90vh" }}
       wrap="wrap"
       justifyContent="center"
       alignItems="flex-start"

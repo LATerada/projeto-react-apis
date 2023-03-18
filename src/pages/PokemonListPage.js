@@ -19,17 +19,15 @@ const PokemonListPage = () => {
     <Box bg="gray" pb="19.063rem" minH="90vh">
       <Text
         pt={{
-          base: "1rem",
-          md: "2rem",
-          lg: "2.5rem",
+          base: "2rem",
+          md: "2.5rem",
           xl: "3rem",
           "2xl": "3.75rem",
         }}
         pb={{
-          base: "0.8rem",
-          md: "1.8rem",
-          lg: "2.5rem",
-          xl: "2.9rem",
+          base: "2rem",
+          md: "2.5rem",
+          xl: "3rem",
           "2xl": "3.438rem",
         }}
         pl={{ base: "1.5rem", md: "2.5rem" }}

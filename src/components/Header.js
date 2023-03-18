@@ -4,9 +4,9 @@ import { GlobalContext } from "../contexts/GlobalContext";
 import { goToPokedexPage, goToPokemonListPage } from "../router/coordinator";
 import logo from "../assets/logo.png";
 import { ChevronLeftIcon } from "@chakra-ui/icons";
-import { Button, Grid, GridItem, useDisclosure } from "@chakra-ui/react";
 import DeleteModal from "./DeleteModal";
 import CaptureModal from "./CaptureModal";
+import { Button, Grid, GridItem, useDisclosure } from "@chakra-ui/react";
 
 const Header = () => {
   const {
@@ -71,6 +71,7 @@ const Header = () => {
             <GridItem
               colStart={{ base: "1", md: "1" }}
               rowStart={{ base: "2", md: "1" }}
+              pb={{base:"1rem", md:'0'}}
             >
               <Button
                 variant={"pokemonList"}
@@ -88,6 +89,7 @@ const Header = () => {
               colStart={{ base: "1", md: "3" }}
               colSpan={{ base: "2", md: "1" }}
               rowStart={{ base: "2", md: "1" }}
+              pb={{base:"1rem", md:'0'}}
             >
               <Button
                 variant={"pokedex"}
@@ -107,6 +109,7 @@ const Header = () => {
                 colStart={{ base: "2", md: "3" }}
                 colSpan={{ base: "2", md: "1" }}
                 rowStart={{ base: "2", md: "1" }}
+                pb={{base:"1rem", md:'0'}}
               >
                 <Button
                   colStart={{ md: "3" }}
@@ -122,6 +125,7 @@ const Header = () => {
                 colStart={{ base: "2", md: "3" }}
                 colSpan={{ base: "2", md: "1" }}
                 rowStart={{ base: "2", md: "1" }}
+                pb={{base:"1rem", md:'0'}}
               >
                 <Button
                   colStart={{ md: "3" }}
