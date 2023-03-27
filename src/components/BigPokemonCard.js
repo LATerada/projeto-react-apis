@@ -14,7 +14,7 @@ const BigPokemonCard = (props) => {
       position="relative"
       w={{
         base: "22rem",
-        sm: "22",
+        sm: "22rem",
         smd: "30rem",
         md: "42rem",
         lg: "51rem",
@@ -69,7 +69,7 @@ const BigPokemonCard = (props) => {
           "2xl": "-8rem",
         }}
         right={{ sm: "0rem", smd: "0.8rem", md: "2.196rem" }}
-        w={{ sm: "12rem", smd: "13rem", md: "20rem", lg: "16.875rem" }}
+        w={{ sm: "12rem", smd: "13rem", md: "18rem", lg: "16.875rem" }}
         src={props.pokemon.sprites.other["official-artwork"].front_default}
         alt="Imagem do Pokemon"
       />
@@ -96,7 +96,7 @@ const BigPokemonCard = (props) => {
         }}
         mt={{ sm: "-1rem", smd: "0rem", md: "0", lg: "-3rem", xl: "0" }}
         mb={{ md: "3rem", lg: "0" }}
-        ml={{ sm: "-3rem", smd: "0", md: "-0.5rem", lg: "0" }}
+        ml={{ sm: "-4rem", smd: "0", md: "-0.5rem", lg: "0" }}
         bg="white"
         borderRadius="0.5rem"
         display="grid"
