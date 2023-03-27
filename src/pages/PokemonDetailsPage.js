@@ -34,8 +34,8 @@ const PokemonDetailsPage = () => {
         w={{ base: "60rem", md: "52rem", xl: "50rem", "2xl": "56.813rem" }}
         src={pokeball}
       />
-      {isLoading ? <p>...carregando...</p> : ""}
-      {error ? <p>ERRO!</p> : ""}
+      {isLoading ? <Text textStyle="h1">...carregando...</Text> : ""}
+      {error ? <Text textStyle="h1">ERRO!</Text> : ""}
       {isLoaded ? <BigPokemonCard pokemon={pokemon} /> : ""}
     </Flex>
   );

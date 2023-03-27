@@ -41,8 +41,8 @@ const PokemonListPage = () => {
         justifyItems="center"
         rowGap={{ base: "14", xl: "16" }}
       >
-        {error ? <p>ERRO!</p> : ""}
-        {isLoading ? <p>carregando...</p> : ""}
+        {error ? <Text textStyle="h1">ERRO!</Text> : ""}
+        {isLoading ? <Text textStyle="h1">carregando...</Text> : ""}
         {isLoaded
           ? filteredPokemonList().map((pokemon) => {
               return <PokemonCard key={pokemon.url} pokemon={pokemon} />;
