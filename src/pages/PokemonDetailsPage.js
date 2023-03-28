@@ -22,7 +22,6 @@ const PokemonDetailsPage = () => {
       alignItems="flex-start"
     >
       <Image
-        bg={"black"}
         zIndex={-1}
         position="absolute"
         top={{ md: "-7rem" }}
