@@ -10,6 +10,8 @@ const PokemonDetailsPage = () => {
 
   return (
     <Flex
+      overflow={"hidden"}
+      zIndex={0}
       position="relative"
       px="1.563rem"
       bg="gray"
@@ -19,6 +21,14 @@ const PokemonDetailsPage = () => {
       justifyContent="center"
       alignItems="flex-start"
     >
+      <Image
+        bg={"black"}
+        zIndex={-1}
+        position="absolute"
+        top={{ md: "-7rem" }}
+        w={{ base: "60rem", md: "52rem", xl: "50rem", "2xl": "56.813rem" }}
+        src={pokeball}
+      />
       <Text
         w="full"
         pt={{ base: "2rem", md: "2.5rem", xl: "3rem", "2xl": "3.75rem" }}
@@ -28,12 +38,7 @@ const PokemonDetailsPage = () => {
       >
         Detalhes
       </Text>
-      <Image
-        position="absolute"
-        top={{ md: "-7rem" }}
-        w={{ base: "60rem", md: "52rem", xl: "50rem", "2xl": "56.813rem" }}
-        src={pokeball}
-      />
+
       {isLoading ? <Text textStyle="h1">...carregando...</Text> : ""}
       {error ? <Text textStyle="h1">ERRO!</Text> : ""}
       {isLoaded ? <BigPokemonCard pokemon={pokemon} /> : ""}
