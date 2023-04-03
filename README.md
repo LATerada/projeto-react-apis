@@ -5,12 +5,12 @@ O Projeto Pokédex é um site de pokémons que possui três páginas: Home, Poke
 
 ## Índice
 
-- <a href="#funcionalidades">Funcionalidades do Projeto</a>
-- <a href="#layout">Layout</a>
-- <a href="#demonstracao">Demonstraçāo</a>
-- <a href="#rodar">Como rodar este projeto?</a>
-- <a href="#tecnologias">Tecnologias Utilizadas</a>
-- <a href="#autoras">Pessoa Autora</a>
+- <a href="#-funcionalidades-do-projeto">Funcionalidades do Projeto</a>
+- <a href="#-layout">Layout</a>
+- <a href="#-demonstraçāo">Demonstraçāo</a>
+- <a href="#-como-rodar-este-projeto">Como rodar este projeto?</a>
+- <a href="#-tecnologias-utilizadas">Tecnologias Utilizadas</a>
+- <a href="#%EF%B8%8F-pessoa-autora">Pessoa Autora</a>
 
 ## 📱 Funcionalidades do Projeto
 
